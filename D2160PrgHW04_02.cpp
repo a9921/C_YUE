@@ -1,10 +1,10 @@
 /*===================================================================== 
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨ 
-§¹¦¨¤é´Á:2025/03/117
-ÀÉ¦W:D2160PrgHW04_2.CPP
-µ{¦¡¥\¯à:(1)¹q¸£²q®±¹CÀ¸
-		 (2)¤­¾Ô¤T³Ó¨î 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³ 
+å®Œæˆæ—¥æœŸ:2025/03/117
+æª”å:D2160PrgHW04_2.CPP
+ç¨‹å¼åŠŸèƒ½:(1)é›»è…¦çŒœæ‹³éŠæˆ²
+		 (2)äº”æˆ°ä¸‰å‹åˆ¶ 
 ===================================================================== */ 
 
 #include <stdio.h>
@@ -14,140 +14,140 @@
 int main()
 {
 	
-	int user, cpu;										//©w¸q¨Ï¥ÎªÌ¿é¤Jªº¼Æ­È»P¹q¸£ªº¼Æ­ÈÅÜ¼Æ 
-	int userWIN=0, cpuWIN=0;							//©w¸q¨Ï¥ÎªÌ³Ó§Q»P¹q¸£³Ó§Qªº¦¸¼ÆÅÜ¼Æ 
-	char sel;											//©w¸q¿ï¾Ü¦r¤¸ªºÅÜ¼Æ 
+	int user, cpu;							//å®šç¾©ä½¿ç”¨è€…è¼¸å…¥çš„æ•¸å€¼èˆ‡é›»è…¦çš„æ•¸å€¼è®Šæ•¸ 
+	int userWIN=0, cpuWIN=0;					//å®šç¾©ä½¿ç”¨è€…å‹åˆ©èˆ‡é›»è…¦å‹åˆ©çš„æ¬¡æ•¸è®Šæ•¸ 
+	char sel;							//å®šç¾©é¸æ“‡å­—å…ƒçš„è®Šæ•¸ 
 	
-	srand(time(NULL));									//ªì©l¸Ü¶Ã¼Æ 
+	srand(time(NULL));						//åˆå§‹è©±äº‚æ•¸ 
 	
 	do
 	{
 	
-		printf("½Ğ¥X®±(°Å¤M(1)¡B¥ÛÀY(2)¡B¥¬(3)):");		//¿é¤J¨Ï¥ÎªÌ¼Æ­È 
+		printf("è«‹å‡ºæ‹³(å‰ªåˆ€(1)ã€çŸ³é ­(2)ã€å¸ƒ(3)):");		//è¼¸å…¥ä½¿ç”¨è€…æ•¸å€¼ 
 		scanf("%d", &user);
 		
 		
-		cpu=rand()%3+1;									//¹q¸£ÀH¾÷¥X®±¼Æ­È 
+		cpu=rand()%3+1;						//é›»è…¦éš¨æ©Ÿå‡ºæ‹³æ•¸å€¼ 
 		
-		printf("§A¥X:");								//Åã¥Ü¨Ï¥ÎªÌµ²ªG 
-		switch (user)									//§PÂ_¨Ï¥ÎªÌ¥X¦óºØ®± 
+		printf("ä½ å‡º:");					//é¡¯ç¤ºä½¿ç”¨è€…çµæœ 
+		switch (user)						//åˆ¤æ–·ä½¿ç”¨è€…å‡ºä½•ç¨®æ‹³ 
 		{
 			case 1:
-				printf("°Å¤M \n");
+				printf("å‰ªåˆ€ \n");
 				break;
 			case 2:
-				printf("¥ÛÀY \n");
+				printf("çŸ³é ­ \n");
 				break;
 			case 3:
-				printf("¥¬ \n");
+				printf("å¸ƒ \n");
 				break;
 			default :
-				printf("¿é¤J¿ù»~ \n"); 
+				printf("è¼¸å…¥éŒ¯èª¤ \n"); 
 				return 1;
 		} 
 		
-		printf("¹q¸£¥X:");								//Åã¥Ü¹q¸£¥X®±µ²ªG 
-		switch (cpu)									//§PÂ_¹q¸£¥X¦óºØ®± 
+		printf("é›»è…¦å‡º:");					//é¡¯ç¤ºé›»è…¦å‡ºæ‹³çµæœ 
+		switch (cpu)						//åˆ¤æ–·é›»è…¦å‡ºä½•ç¨®æ‹³ 
 		{
 			case 1:
-				printf("°Å¤M \n");
+				printf("å‰ªåˆ€ \n");
 				break;
 			case 2:
-				printf("¥ÛÀY \n");
+				printf("çŸ³é ­ \n");
 				break;
 			case 3:
-				printf("¥¬ \n");
+				printf("å¸ƒ \n");
 				break;
 		}
 		
-		if (user==cpu)																//§PÂ_¨Ï¥ÎªÌ»P¹q¸£²q®±µ²ªG 
+		if (user==cpu)						//åˆ¤æ–·ä½¿ç”¨è€…èˆ‡é›»è…¦çŒœæ‹³çµæœ 
 			{
-				printf("¥­¤â,¦A¤@¦¸ \n");
+				printf("å¹³æ‰‹,å†ä¸€æ¬¡ \n");
 				sel = 'Y';
 			}
 		else if ((user==1 && cpu==3)||(user==2 && cpu==1)||(user==3 && cpu==2))
 			{
-				printf("§AÄ¹¤F!\n");
-            	printf("¬O§_Ä~Äò?(Y/N): ");
+				printf("ä½ è´äº†!\n");
+            	printf("æ˜¯å¦ç¹¼çºŒ?(Y/N): ");
 				scanf(" %c", &sel);
 			}
 		else
 			{
-				printf("¹q¸£Ä¹¤F!\n");
-            	printf("¬O§_Ä~Äò?(Y/N): ");
+				printf("é›»è…¦è´äº†!\n");
+            	printf("æ˜¯å¦ç¹¼çºŒ?(Y/N): ");
             	scanf(" %c", &sel);
 			}
 					
-	}while (sel=='Y'||sel=='y');					//§PÂ_¨Ï¥ÎªÌ¬O§_Ä~Äò 
+	}while (sel=='Y'||sel=='y');					//åˆ¤æ–·ä½¿ç”¨è€…æ˜¯å¦ç¹¼çºŒ 
 	
 	do
 	{
-		userWIN=0;									//©w¸q¨Ï¥ÎªÌ³Ó§Q»P¹q¸£³Ó§Q¦¸¼Æªì©l­È 
+		userWIN=0;						//å®šç¾©ä½¿ç”¨è€…å‹åˆ©èˆ‡é›»è…¦å‹åˆ©æ¬¡æ•¸åˆå§‹å€¼ 
 		cpuWIN=0;
 		
-		while(userWIN<3 && cpuWIN<3)				//·í¨Ï¥ÎªÌ©Î¹q¸£³Ó§Q¤p©ó3¦¸®É°õ¦æ 
+		while(userWIN<3 && cpuWIN<3)				//ç•¶ä½¿ç”¨è€…æˆ–é›»è…¦å‹åˆ©å°æ–¼3æ¬¡æ™‚åŸ·è¡Œ 
 		{
-			printf("¤­¾Ô¤T³Ó½Ğ¥X®±(°Å¤M(1)¡B¥ÛÀY(2)¡B¥¬(3)):");
+			printf("äº”æˆ°ä¸‰å‹è«‹å‡ºæ‹³(å‰ªåˆ€(1)ã€çŸ³é ­(2)ã€å¸ƒ(3)):");
 			scanf("%d", &user);
 			while (getchar() != '\n');
 			
 			cpu =rand()%3+1;
 			
-			printf("§A¥X:");
+			printf("ä½ å‡º:");
 			switch(user)
 			{
 			case 1:
-				printf("°Å¤M \n");
+				printf("å‰ªåˆ€ \n");
 				break;
 			case 2:
-				printf("¥ÛÀY \n");
+				printf("çŸ³é ­ \n");
 				break;
 			case 3:
-				printf("¥¬ \n");
+				printf("å¸ƒ \n");
 				break;
 			default :
-				printf("¿é¤J¿ù»~ \n"); 
+				printf("è¼¸å…¥éŒ¯èª¤ \n"); 
 				return 1;
 			} 
 			
-			printf("¹q¸£¥X:");
+			printf("é›»è…¦å‡º:");
 			switch (cpu)
 			{
 				case 1:
-					printf("°Å¤M \n");
+					printf("å‰ªåˆ€ \n");
 					break;
 				case 2:
-					printf("¥ÛÀY \n");
+					printf("çŸ³é ­ \n");
 					break;
 				case 3:
-					printf("¥¬ \n");
+					printf("å¸ƒ \n");
 					break;
 			}
 			
 			if (user==cpu)
 			{
-				printf("¥­¤â,¦A¤@¦¸ \n");
+				printf("å¹³æ‰‹,å†ä¸€æ¬¡ \n");
 				sel = 'Y';
 			}
-			else if ((user==1 && cpu==3)||(user==2 && cpu==1)||(user==3 && cpu==2))	//¦pªG¨Ï¥ÎªÌ³Ó§Q³Ó³õ¥[1 
+			else if ((user==1 && cpu==3)||(user==2 && cpu==1)||(user==3 && cpu==2))	//å¦‚æœä½¿ç”¨è€…å‹åˆ©å‹å ´åŠ 1 
 			{
-				printf("§AÄ¹¤F!\n");
+				printf("ä½ è´äº†!\n");
 				userWIN++;
             }
 			else
 			{
-				printf("¹q¸£Ä¹¤F!\n");				//¦pªG¹q¸£³Ó§Q¹q¸£³Ó³õ¥[1 
+				printf("é›»è…¦è´äº†!\n");				//å¦‚æœé›»è…¦å‹åˆ©é›»è…¦å‹å ´åŠ 1 
 				cpuWIN++;
 			}
-			printf("¥Ø«e¤À¼Æ:§A %d - ¹q¸£ %d \n", userWIN, cpuWIN);			//¿é¥X²{¦b¦U³Ó³õ¦¸¼Æ 
+			printf("ç›®å‰åˆ†æ•¸:ä½  %d - é›»è…¦ %d \n", userWIN, cpuWIN);	//è¼¸å‡ºç¾åœ¨å„å‹å ´æ¬¡æ•¸ 
 		}
 		
-		if (userWIN==3)								//§PÂ_¦óªÌ§¹¥ş³Ó§Q 
-			printf("®¥³ß§A,¤­¾Ô¤T³Ó \n");
+		if (userWIN==3)							//åˆ¤æ–·ä½•è€…å®Œå…¨å‹åˆ© 
+			printf("æ­å–œä½ ,äº”æˆ°ä¸‰å‹ \n");
 		else
-			printf ("¹q¸£¤­¾Ô¤T³Ó \n");
+			printf ("é›»è…¦äº”æˆ°ä¸‰å‹ \n");
 		
-		printf("¬O§_Ä~Äò?(Y/N):");					//¬O§_Ä~Äò²q®± 
+		printf("æ˜¯å¦ç¹¼çºŒ?(Y/N):");					//æ˜¯å¦ç¹¼çºŒçŒœæ‹³ 
 		scanf("%c", &sel);
         while (getchar() != '\n');
 	}while (sel=='Y'||sel=='y');
