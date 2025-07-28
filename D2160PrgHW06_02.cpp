@@ -1,61 +1,61 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/02/24
-ÀÉ¦W:D2160PrgHw06_02.CPP
-µ{¦¡¥\¯à:­pºâ¦U¾Ç¥Í´Á¤¤¦Ò¦¨ÁZ¤Î¨ä¥­§¡»P¼Ğ·Ç®t 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+å®Œæˆæ—¥æœŸ:2025/02/24
+æª”å:D2160PrgHw06_02.CPP
+ç¨‹å¼åŠŸèƒ½:è¨ˆç®—å„å­¸ç”ŸæœŸä¸­è€ƒæˆç¸¾åŠå…¶å¹³å‡èˆ‡æ¨™æº–å·® 
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define Num_Student 5							//¾Ç¥Í¤H¼Æ¬°5 
-#define Num_Subject 4							//¬ì¥Ø¼Æ¬°4 
+#define Num_Student 5							//å­¸ç”Ÿäººæ•¸ç‚º5 
+#define Num_Subject 4							//ç§‘ç›®æ•¸ç‚º4 
 
 int main ()
 {
-	//¾Ç¥Í¼Æ¦Cªº¦W¦r»Pªø«× 
-	char student[Num_Student][100]={"An Se Young ", "³¯«Bµá ", "À¹¸ê¿o ", "Akane Yamaguchi ", "Carolina Marin"};
-	//¬ì¥Øªº¦WºÙ»Pªø«× 
-	char subject[Num_Subject][10]={"¦Ğ²y", "­µ¼Ö", "´Î²y", "¨¬²y"};	 
-	int score[Num_Student][Num_Subject];				//©w¸q¤À¼Æªº¤G¶¥°}¦C 
-	int i, j;											//¦æ¦CÅÜ¼Æ 
-	double Sum=0.0, Sum_STD=0.0;						//Á`©MÅÜ¼Æ 
-	double Mean[Num_Student]={0.0};						//¥­§¡­Èªº¦æ¦C 
-	double STD[Num_Student]={0.0};						//¼Ğ·Ç®tªº¦æ¦C 
+									//å­¸ç”Ÿæ•¸åˆ—çš„åå­—èˆ‡é•·åº¦ 
+	char student[Num_Student][100]={"An Se Young ", "é™³é›¨è² ", "æˆ´è³‡ç© ", "Akane Yamaguchi ", "Carolina Marin"};
+									//ç§‘ç›®çš„åç¨±èˆ‡é•·åº¦ 
+	char subject[Num_Subject][10]={"ç¾½çƒ", "éŸ³æ¨‚", "æ£’çƒ", "è¶³çƒ"};	 
+	int score[Num_Student][Num_Subject];				//å®šç¾©åˆ†æ•¸çš„äºŒéšé™£åˆ— 
+	int i, j;							//è¡Œåˆ—è®Šæ•¸ 
+	double Sum=0.0, Sum_STD=0.0;					//ç¸½å’Œè®Šæ•¸ 
+	double Mean[Num_Student]={0.0};					//å¹³å‡å€¼çš„è¡Œåˆ— 
+	double STD[Num_Student]={0.0};					//æ¨™æº–å·®çš„è¡Œåˆ— 
 	
-	printf("½Ğ¿é¤J¦U¾Ç¥Íªº¦¨ÁZ: \n");			
-	for(i=0;i<Num_Student;i++)							//¦pªGi¤p©ó¾Ç¥Í¤H¼Æ´N°õ¦æ 
+	printf("è«‹è¼¸å…¥å„å­¸ç”Ÿçš„æˆç¸¾: \n");			
+	for(i=0;i<Num_Student;i++)					//å¦‚æœiå°æ–¼å­¸ç”Ÿäººæ•¸å°±åŸ·è¡Œ 
 	{
-		printf("%sªº¦¨ÁZ:\n",student[i]);				//Åã¥Ü­n¿é¤Jªº¬O­ş­Ó¾Ç¥Íªº¦¨ÁZ 
-		for(j=0;j<Num_Subject;j++)						//¦pªGj¤p©ó¬ì¥Ø¼Æ´N°õ¦æ 
+		printf("%sçš„æˆç¸¾:\n",student[i]);			//é¡¯ç¤ºè¦è¼¸å…¥çš„æ˜¯å“ªå€‹å­¸ç”Ÿçš„æˆç¸¾ 
+		for(j=0;j<Num_Subject;j++)				//å¦‚æœjå°æ–¼ç§‘ç›®æ•¸å°±åŸ·è¡Œ 
 		{
-			printf("%s:",subject[j]);					//¬ì¥Ø¦WºÙ 
-			scanf("%d",&score[i][j]);					//¦¨ÁZ¿é¤J 
+			printf("%s:",subject[j]);			//ç§‘ç›®åç¨± 
+			scanf("%d",&score[i][j]);			//æˆç¸¾è¼¸å…¥ 
 		} 
 	} 
 	
-	for (i=0; i<Num_Student; i++)						//¦pªGi¤p©ó¾Ç¥Í¼Æ´N°õ¦æ 
+	for (i=0; i<Num_Student; i++)					//å¦‚æœiå°æ–¼å­¸ç”Ÿæ•¸å°±åŸ·è¡Œ 
 	{
-		Sum=0.0;										//Á`©M¬°0 
+		Sum=0.0;						//ç¸½å’Œç‚º0 
 		Sum_STD=0.0;									 
 		
-		for (j=0; j<Num_Subject; j++)					//¦pªGj¤p©ó½Òµ{¼Æ´N°õ¦æ 
-			Sum+=score[i][j];							//¬Y¾Ç¥Íªº¦U¬ìÁ`©M 
+		for (j=0; j<Num_Subject; j++)				//å¦‚æœjå°æ–¼èª²ç¨‹æ•¸å°±åŸ·è¡Œ 
+			Sum+=score[i][j];				//æŸå­¸ç”Ÿçš„å„ç§‘ç¸½å’Œ 
 	
-	Mean[i]=Sum/Num_Subject;							//¬Y¾Ç¥Íªº¥­§¡ 
+	Mean[i]=Sum/Num_Subject;					//æŸå­¸ç”Ÿçš„å¹³å‡ 
 	
-	Sum_STD=0.0;										//¼Ğ·Ç®tªºÁ`©M¬°0 
-	for(j=0; j<Num_Subject; j++)						//¦pªGj¤p©ó¬ì¥Ø¼Æ´N°õ¦æ 
-		Sum_STD+=pow(score[i][j]-Mean[i],2);			//Á`©M¬°¤À¼Æ´î¥h¥­§¡¥­¤è 
+	Sum_STD=0.0;							//æ¨™æº–å·®çš„ç¸½å’Œç‚º0 
+	for(j=0; j<Num_Subject; j++)					//å¦‚æœjå°æ–¼ç§‘ç›®æ•¸å°±åŸ·è¡Œ 
+		Sum_STD+=pow(score[i][j]-Mean[i],2);			//ç¸½å’Œç‚ºåˆ†æ•¸æ¸›å»å¹³å‡å¹³æ–¹ 
 	
-	STD[i]=sqrt(Sum_STD/Num_Subject);					//Á`©M°£©ó¬ì¥Ø¼Æ¶}®Ú¸¹ 
+	STD[i]=sqrt(Sum_STD/Num_Subject);				//ç¸½å’Œé™¤æ–¼ç§‘ç›®æ•¸é–‹æ ¹è™Ÿ 
 	}
 	
-	printf("\n%-20s","©m¦W");							//Åã¥Ü¿é¤Jªºµ²ªG 
+	printf("\n%-20s","å§“å");					//é¡¯ç¤ºè¼¸å…¥çš„çµæœ 
 	for (j=0; j<Num_Subject; j++)
 		printf("%-10s", subject[j]);
-	printf("%-10s%-10s\n", "¥­§¡", "¼Ğ·Ç®t");
+	printf("%-10s%-10s\n", "å¹³å‡", "æ¨™æº–å·®");
 	
 	for(i=0; i<Num_Student; i++)
 	{
