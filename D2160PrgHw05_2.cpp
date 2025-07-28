@@ -1,13 +1,13 @@
 /*===================================================================== 
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨ 
-§¹¦¨¤é´Á:2025/03/24
-ÀÉ¦W:D2160PrgHW05_2.CPP
-µ{¦¡¥\¯à:(1)­«½ÆÅã¥ÜHelloKitty
-		 (2)­pºâ§PÂ_BMIÅé¦ì
-		 (3)¥|«h¹Bºâ
-		 (4)¼Æ¦r¤j¤p±Æ§Ç 
-		 ªº¥Dµ{¦¡ 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³ 
+å®Œæˆæ—¥æœŸ:2025/03/24
+æª”å:D2160PrgHW05_2.CPP
+ç¨‹å¼åŠŸèƒ½:(1)é‡è¤‡é¡¯ç¤ºHelloKitty
+		 (2)è¨ˆç®—åˆ¤æ–·BMIé«”ä½
+		 (3)å››å‰‡é‹ç®—
+		 (4)æ•¸å­—å¤§å°æ’åº 
+		 çš„ä¸»ç¨‹å¼ 
 ===================================================================== */ 
 
 #include <stdio.h>
@@ -17,45 +17,45 @@
 int main()
 {
 	
-	int k;  												//©w¸q­«½Æ¦¸¼Æk 
-	printf("HelloKitty (n¦¸):");							//¿é¤J­«½Æ¦¸¼Æ 
+	int k;  									//å®šç¾©é‡è¤‡æ¬¡æ•¸k 
+	printf("HelloKitty (næ¬¡):");							//è¼¸å…¥é‡è¤‡æ¬¡æ•¸ 
 	scanf("%d", &k);
-	HelloKitty(k);											//©I¥sHelloKitty()¨ç¼Æ­«½Æk¦¸ 
+	HelloKitty(k);									//å‘¼å«HelloKitty()å‡½æ•¸é‡è¤‡kæ¬¡ 
 	
 	
-	float kg, cm, BMI;										//©w¸qÅé­«¨­°ª»PBMI 
-	printf("½Ğ¿é¤JÅé­«(kg):");								//¿é¤JÅé­« 
+	float kg, cm, BMI;								//å®šç¾©é«”é‡èº«é«˜èˆ‡BMI 
+	printf("è«‹è¼¸å…¥é«”é‡(kg):");							//è¼¸å…¥é«”é‡ 
 	scanf("%f", &kg);
-	while (getchar() != '\n');								//²M°£½w¦s°Ï 
-	printf("½Ğ¿é¤J¨­°ª(cm):"); 								//¿é¤J¨­°ª 
+	while (getchar() != '\n');							//æ¸…é™¤ç·©å­˜å€ 
+	printf("è«‹è¼¸å…¥èº«é«˜(cm):"); 							//è¼¸å…¥èº«é«˜ 
 	scanf("%f", &cm);
 	while (getchar() != '\n');
-	CalBMI(kg, cm); 										//©I¥sCalBMI¨ç¼Æ 
+	CalBMI(kg, cm); 								//å‘¼å«CalBMIå‡½æ•¸ 
 	
 	
-	float a, b;												//©w¸q²Ä¤@­Ó»P²Ä¤G­Ó¼Æ¦r 
-	char op;												//©w¸q¹Bºâ¤l 
-	printf("½Ğ¿é¤J²Ä¤@­Ó¼Æ¦r:");							//¿é¤J²Ä¤@­Ó¼Æ¦r 
+	float a, b;									//å®šç¾©ç¬¬ä¸€å€‹èˆ‡ç¬¬äºŒå€‹æ•¸å­— 
+	char op;									//å®šç¾©é‹ç®—å­ 
+	printf("è«‹è¼¸å…¥ç¬¬ä¸€å€‹æ•¸å­—:");							//è¼¸å…¥ç¬¬ä¸€å€‹æ•¸å­— 
 	scanf("%f", &a);
 	while (getchar() != '\n'); 
-	printf("½Ğ¿é¤J¹Bºâ¦r¤¸:");								//¿é¤J¹Bºâ¤l 
+	printf("è«‹è¼¸å…¥é‹ç®—å­—å…ƒ:");							//è¼¸å…¥é‹ç®—å­ 
 	scanf("%c", &op); 
 	while (getchar() != '\n');
-	printf("½Ğ¿é¤J²Ä¤G­Ó¼Æ¦r:");							//¿é¤J²Ä¤G­Ó¼Æ¦r 
+	printf("è«‹è¼¸å…¥ç¬¬äºŒå€‹æ•¸å­—:");							//è¼¸å…¥ç¬¬äºŒå€‹æ•¸å­— 
 	scanf("%f", &b); 
 	while (getchar() != '\n');
-	printf("µ²ªG:%.2f \n", operation(op, a, b));			//©I¥soperation¨ç¼Æ¿é¥Xµ²ªG 
+	printf("çµæœ:%.2f \n", operation(op, a, b));					//å‘¼å«operationå‡½æ•¸è¼¸å‡ºçµæœ 
 	
 	
-	int A, B, C;											//©w¸q ABC¤T­Ó¼Æ¦r 
-	printf("½Ğ¿é¤JA:");										//¿é¤JAªº¼Æ¦r 
+	int A, B, C;									//å®šç¾© ABCä¸‰å€‹æ•¸å­— 
+	printf("è«‹è¼¸å…¥A:");								//è¼¸å…¥Açš„æ•¸å­— 
 	scanf("%d", &A); 	
-	printf("½Ğ¿é¤JB:");										//¿é¤JBªº¼Æ¦r 
+	printf("è«‹è¼¸å…¥B:");								//è¼¸å…¥Bçš„æ•¸å­— 
 	scanf("%d", &B); 
-	printf("½Ğ¿é¤JC:");										//¿é¤JCªº¼Æ¦r 
+	printf("è«‹è¼¸å…¥C:");								//è¼¸å…¥Cçš„æ•¸å­— 
 	scanf("%d", &C); 
-	sort(A, B, C);											//©I¥ssort¨ç¼Æ 
-	printf("A=%d < B=%d < C=%d \n", A, B, C);				//¿é¥XABCªº¼Æ­È¤j¤p 
+	sort(A, B, C);									//å‘¼å«sortå‡½æ•¸ 
+	printf("A=%d < B=%d < C=%d \n", A, B, C);					//è¼¸å‡ºABCçš„æ•¸å€¼å¤§å° 
 	
 	
 	system("pause");
