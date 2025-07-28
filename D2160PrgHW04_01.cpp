@@ -1,9 +1,9 @@
 /*===================================================================== 
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨ 
-§¹¦¨¤é´Á:2025/03/117
-ÀÉ¦W:D2160PrgHW04_1.CPP
-µ{¦¡¥\¯à:­pºâBMI§PÂ_Åé¦ì­pºâÅé¦ì¤H¼Æ»P¥­§¡ 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³ 
+å®Œæˆæ—¥æœŸ:2025/03/117
+æª”å:D2160PrgHW04_1.CPP
+ç¨‹å¼åŠŸèƒ½:è¨ˆç®—BMIåˆ¤æ–·é«”ä½è¨ˆç®—é«”ä½äººæ•¸èˆ‡å¹³å‡ 
 ===================================================================== */ 
 
 #include <stdio.h>
@@ -11,28 +11,28 @@
 #include <math.h>
 
 
-double BMICOUNT (double W, double H)					//©w¸qBMIªººâ¦¡ 
+double BMICOUNT (double W, double H)					//å®šç¾©BMIçš„ç®—å¼ 
 {
 	double bmi = W/((H/100.0)*(H/100));
 	printf("BMI:%.2f \n", bmi);
 	
-	if (bmi<20)											//§PÂ_Åé¦ì¬°¦óºØ 
+	if (bmi<20)							//åˆ¤æ–·é«”ä½ç‚ºä½•ç¨® 
 	{
-		printf("¹L»´ \n");
+		printf("éè¼• \n");
 	}
 	else
 		if (bmi>=20 && bmi<=25)
 		{
-			printf("¥¿±` \n");
+			printf("æ­£å¸¸ \n");
 		}
 		else 
 			if(bmi>25 && bmi<=28)
 			{
-				printf("¹L­« \n");
+				printf("éé‡ \n");
 			}
 			else
 			{
-				printf("ªÎ­D \n");
+				printf("è‚¥èƒ– \n");
 			}
 		return bmi;
 }
@@ -40,37 +40,37 @@ double BMICOUNT (double W, double H)					//©w¸qBMIªººâ¦¡
 int main()
 {
 	
-	int num;											//©w¸q¤H¼ÆÅÜ¼Æ 
-	char sel;											//©w¸q¿ï¾Ü¦r¤¸ÅÜ¼Æ 
+	int num;							//å®šç¾©äººæ•¸è®Šæ•¸ 
+	char sel;							//å®šç¾©é¸æ“‡å­—å…ƒè®Šæ•¸ 
 	
-	do													//¦Ü¤Ö°õ¦æ¤@¦¸°j°é 
+	do								//è‡³å°‘åŸ·è¡Œä¸€æ¬¡è¿´åœˆ 
 	{
-		printf("½Ğ¿é¤JÀË´ú¤H¼Æ:");						//¿é¤JÀË´ú¤H¼Æ 
+		printf("è«‹è¼¸å…¥æª¢æ¸¬äººæ•¸:");				//è¼¸å…¥æª¢æ¸¬äººæ•¸ 
 		scanf("%d",&num);
-		while(getchar() != '\n');						// ²M°£¿é¤J½w½Ä°Ï 
+		while(getchar() != '\n');				// æ¸…é™¤è¼¸å…¥ç·©è¡å€ 
 	
-		double totalH=0, totalW=0;						//©w¸qÁ`¨­°ª»PÅé­«ÅÜ¼Æ 
-		int BMI20=0, BMI25=0, BMI28=0, BMI29=0;			//©w¸q¦UÅé¦ì¤H¼ÆÅÜ¼Æ 
+		double totalH=0, totalW=0;				//å®šç¾©ç¸½èº«é«˜èˆ‡é«”é‡è®Šæ•¸ 
+		int BMI20=0, BMI25=0, BMI28=0, BMI29=0;			//å®šç¾©å„é«”ä½äººæ•¸è®Šæ•¸ 
 		
-		int i=0;										//©w¸qÅÜ¼Æªì©l­È 
-		while (i<num)									//·íÅÜ¼Æ¤p©óÀË´ú¤H¼Æ®É°õ¦æ 
+		int i=0;						//å®šç¾©è®Šæ•¸åˆå§‹å€¼ 
+		while (i<num)						//ç•¶è®Šæ•¸å°æ–¼æª¢æ¸¬äººæ•¸æ™‚åŸ·è¡Œ 
 		{
-			double H, W;								//©w¸q¨­°ªÅé­«ÅÜ¼Æ 
+			double H, W;					//å®šç¾©èº«é«˜é«”é‡è®Šæ•¸ 
 			
-			printf("²Ä %d ¦ì:\n", i + 1);				//¿é¥X²{¦b²Ä´X¦ì¦b¿é¤J¸ê®Æ 
-        	printf("¨­°ª(cm): ");						//¿é¤J¨­°ª 
+			printf("ç¬¬ %d ä½:\n", i + 1);			//è¼¸å‡ºç¾åœ¨ç¬¬å¹¾ä½åœ¨è¼¸å…¥è³‡æ–™ 
+        	printf("èº«é«˜(cm): ");					//è¼¸å…¥èº«é«˜ 
             scanf("%lf", &H);
-            while(getchar() != '\n');					//¿é¤JÅé­« 
-            printf("Åé­«(kg): ");
+            while(getchar() != '\n');					//è¼¸å…¥é«”é‡ 
+            printf("é«”é‡(kg): ");
             scanf("%lf", &W);
-            while(getchar() != '\n');					//²M°£¿é¤J½w½Ä°Ï 
+            while(getchar() != '\n');					//æ¸…é™¤è¼¸å…¥ç·©è¡å€ 
 			
-			totalH += H;								//Åé­«¨­°ª¥[Á`¤JÁ`¨­°ª»PÅé­« 
+			totalH += H;					//é«”é‡èº«é«˜åŠ ç¸½å…¥ç¸½èº«é«˜èˆ‡é«”é‡ 
 			totalW += W;
 			
-			double bmi=BMICOUNT(W, H);					//©w¸qBMIªºÅÜ¼Æ»Pºâ¦¡ 
+			double bmi=BMICOUNT(W, H);			//å®šç¾©BMIçš„è®Šæ•¸èˆ‡ç®—å¼ 
 			
-			if(bmi<20)									//²Î­p§PÂ_¥[Á`¦UÅé¦ìªº¤H¼Æ 
+			if(bmi<20)					//çµ±è¨ˆåˆ¤æ–·åŠ ç¸½å„é«”ä½çš„äººæ•¸ 
 				BMI20++;
 			else
 				if(bmi>=20 && bmi<=25)
@@ -84,17 +84,17 @@ int main()
 			i++;
 		}
 		
-		printf("¥­§¡¨­°ª: %.2f cm \n",totalH/num);		//¿é¥X¥­§¡¼Æ­È¦UÅé¦ì¤H¼Æªºµ²ªG 
-		printf("¥­§¡Åé­«: %.2f kg \n",totalW/num);
-		printf("BMI <20 ªº¤H¼Æ: %d \n",BMI20);
-		printf("BMI 20~25 ªº¤H¼Æ: %d \n",BMI25);
-		printf("BMI 25~28 ªº¤H¼Æ: %d \n",BMI28);
-		printf("BMI >28 ªº¤H¼Æ: %d \n",BMI29);
+		printf("å¹³å‡èº«é«˜: %.2f cm \n",totalH/num);		//è¼¸å‡ºå¹³å‡æ•¸å€¼å„é«”ä½äººæ•¸çš„çµæœ 
+		printf("å¹³å‡é«”é‡: %.2f kg \n",totalW/num);
+		printf("BMI <20 çš„äººæ•¸: %d \n",BMI20);
+		printf("BMI 20~25 çš„äººæ•¸: %d \n",BMI25);
+		printf("BMI 25~28 çš„äººæ•¸: %d \n",BMI28);
+		printf("BMI >28 çš„äººæ•¸: %d \n",BMI29);
 		
-		printf("¬O§_­«·s¿é¤JBMI? Y/N:");				//¿é¤J¬O§_­«·s°õ¦æBMI 
+		printf("æ˜¯å¦é‡æ–°è¼¸å…¥BMI? Y/N:");				//è¼¸å…¥æ˜¯å¦é‡æ–°åŸ·è¡ŒBMI 
 		scanf("%c", &sel);
 		
-	}while (sel=='Y' || sel=='y');						//§PÂ_¿ï¾Ü 
+	}while (sel=='Y' || sel=='y');					//åˆ¤æ–·é¸æ“‡ 
 	
 	system("pause");
 	return 0;
