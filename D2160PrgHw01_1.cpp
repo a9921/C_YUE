@@ -1,9 +1,8 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/02/24
-ÀÉ¦W:D2160PrgHw01_01.CPP
-µ{¦¡¥\¯à:­pºâ¶êÀ@­±¿nÅé¿n
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+æª”å:D2160PrgHw01_01.CPP
+ç¨‹å¼åŠŸèƒ½:è¨ˆç®—åœ“éŒé¢ç©é«”ç©
 */
 
 #include <stdio.h>
@@ -12,18 +11,18 @@
 
 int main()
 {
-    float h, r, pi=3.14;					// ¶êÀ@°ª¡B¶ê¥b®|¦ÛÅÜ¼Æ¡A«Å§i£k¼Æ­È 
+    float h, r, pi=3.14;					// åœ“éŒé«˜ã€åœ“åŠå¾‘è‡ªè®Šæ•¸ï¼Œå®£å‘ŠÏ€æ•¸å€¼ 
     double s, SA, BA, Area, V;
 
-    printf("¿é¤J¶êÀ@ªº°ª¤Î¥b®|:");			//¸ê®Æ¿é¥X 
+    printf("è¼¸å…¥åœ“éŒçš„é«˜åŠåŠå¾‘:");				//è³‡æ–™è¼¸å‡º 
     scanf("%f %f", &h, &r);
     
-	s=sqrt(pow(h,2)+pow(r,2));				//¶êÀ@±×Ãä­pºâ¦¡ 
-    SA=pi*s*r;								//¶êÀ@°¼­±¿n­pºâ¦¡ 
-    BA=pi*pow(r,2);							//¶êÀ@©³­±¿n­pºâ¦¡ 
-    Area=SA+BA;								//¶êÀ@ªí­±¿n­pºâ¦¡ 
-    V=(1.0/3)*pi*h*pow(r,2);				//¶êÀ@ÅéÂû­pºâ¦¡ 
-    printf("­±¿n=%.2f , Åé¿n=%.2f\n",Area ,V);		//µ²ªG¿é¥X 
+	s=sqrt(pow(h,2)+pow(r,2));				//åœ“éŒæ–œé‚Šè¨ˆç®—å¼ 
+    SA=pi*s*r;							//åœ“éŒå´é¢ç©è¨ˆç®—å¼ 
+    BA=pi*pow(r,2);						//åœ“éŒåº•é¢ç©è¨ˆç®—å¼ 
+    Area=SA+BA;							//åœ“éŒè¡¨é¢ç©è¨ˆç®—å¼ 
+    V=(1.0/3)*pi*h*pow(r,2);					//åœ“éŒé«”é›žè¨ˆç®—å¼ 
+    printf("é¢ç©=%.2f , é«”ç©=%.2f\n",Area ,V);			//çµæžœè¼¸å‡º 
 
     system("pause");
     return 0;
