@@ -1,13 +1,13 @@
 /*===================================================================== 
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨ 
-§¹¦¨¤é´Á:2025/03/24
-ÀÉ¦W:myFun.cpp 
-µ{¦¡¥\¯à:(1)­«½ÆÅã¥ÜHelloKitty
-		 (2)­pºâ§PÂ_BMIÅé¦ì
-		 (3)¥|«h¹Bºâ
-		 (4)¼Æ¦r¤j¤p±Æ§Ç 
-		 ªº¨ç¦¡ÀÉ 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³ 
+å®Œæˆæ—¥æœŸ:2025/03/24
+æª”å:myFun.cpp 
+ç¨‹å¼åŠŸèƒ½:(1)é‡è¤‡é¡¯ç¤ºHelloKitty
+		 (2)è¨ˆç®—åˆ¤æ–·BMIé«”ä½
+		 (3)å››å‰‡é‹ç®—
+		 (4)æ•¸å­—å¤§å°æ’åº 
+		 çš„å‡½å¼æª” 
 ===================================================================== */ 
 
 
@@ -16,70 +16,70 @@
 #include "myFun.h" 
 
 
-void HelloKitty (int k)										//¦Û­qªº¨ç¼ÆHelloKitty() 
+void HelloKitty (int k)									//è‡ªè¨‚çš„å‡½æ•¸HelloKitty() 
 {
-	int i;													//©w¸q¦C¦L¦¸¼Æ 
-	for (i=1;i<=k;i++)										//¦C¦L¦¸¼Æ¬°¤@¦¸ª½¨ì¤j©óµ¥©ó­«½Æ¦¸¼Æ 
-		printf("Hello Kitty \n");							//¦C¦LHello Kitty 
-	return; 												//ªğ¦^¥Dµ{¦¡ 
+	int i;										//å®šç¾©åˆ—å°æ¬¡æ•¸ 
+	for (i=1;i<=k;i++)								//åˆ—å°æ¬¡æ•¸ç‚ºä¸€æ¬¡ç›´åˆ°å¤§æ–¼ç­‰æ–¼é‡è¤‡æ¬¡æ•¸ 
+		printf("Hello Kitty \n");						//åˆ—å°Hello Kitty 
+	return; 									//è¿”å›ä¸»ç¨‹å¼ 
 }
 
-float CalBMI (float kg, float cm)							//¦Û­qªº¨ç¼ÆCalBMI() 
+float CalBMI (float kg, float cm)							//è‡ªè¨‚çš„å‡½æ•¸CalBMI() 
 {
-	float m=cm/100.0;										//¤½¤Ø=¤½¤À°£100 
-	float BMI=kg/(m*m);										//­pºâBMI 
+	float m=cm/100.0;								//å…¬å°º=å…¬åˆ†é™¤100 
+	float BMI=kg/(m*m);								//è¨ˆç®—BMI 
 	
-	printf("BMI:%.2f,Åé¦ì:",BMI);							//¿é¥XBMI­È¡AÅé¦ì¬° 
-	if(BMI<20)												//¦pªGBMI<20¬°¤Ó½G 
-		printf("¤Ó½G \n");
-	else if(BMI<25)											//¦pªGBMI<25¬°¥¿±` 
-		printf("¥¿±` \n");									
-	else if(BMI<=28) 										//¦pªGBMI<=28¬°¹L­« 
-		printf("¹L­« \n");
-	else													//¦pªGBMI¶W¹L28¬°ªÎ­D 
-		printf("ªÎ­D \n");
+	printf("BMI:%.2f,é«”ä½:",BMI);							//è¼¸å‡ºBMIå€¼ï¼Œé«”ä½ç‚º 
+	if(BMI<20)									//å¦‚æœBMI<20ç‚ºå¤ªç˜¦ 
+		printf("å¤ªç˜¦ \n");
+	else if(BMI<25)									//å¦‚æœBMI<25ç‚ºæ­£å¸¸ 
+		printf("æ­£å¸¸ \n");									
+	else if(BMI<=28) 								//å¦‚æœBMI<=28ç‚ºéé‡ 
+		printf("éé‡ \n");
+	else										//å¦‚æœBMIè¶…é28ç‚ºè‚¥èƒ– 
+		printf("è‚¥èƒ– \n");
 	
-	return BMI;												//¦^¶Ç¨ì¥Dµ{¦¡ªºBMI 
+	return BMI;									//å›å‚³åˆ°ä¸»ç¨‹å¼çš„BMI 
 }
 
-float operation (char op, float a, float b)					//¦Û­qªº¨ç¼Æoperation() 
+float operation (char op, float a, float b)						//è‡ªè¨‚çš„å‡½æ•¸operation() 
 {
-	switch (op)												//§PÂ_¹Bºâ¤l¬°¦ó 
+	switch (op)									//åˆ¤æ–·é‹ç®—å­ç‚ºä½• 
 	{
 		case '+':											
-			return a+b;										//¦pªG¬°+ºâ¦¡¬°a+b 
+			return a+b;							//å¦‚æœç‚º+ç®—å¼ç‚ºa+b 
 		case '-':
-			return a-b;										//¦pªG¬°-ºâ¦¡¬°a-b 
+			return a-b;							//å¦‚æœç‚º-ç®—å¼ç‚ºa-b 
 		case '*':
-			return a*b;										//¦pªG¬°*ºâ¦¡¬°a*b 
-		case '/':											
-			return a/b;										//¦pªG¬°/ºâ¦¡¬°a/b 
+			return a*b;							//å¦‚æœç‚º*ç®—å¼ç‚ºa*b 
+		case '/':										
+			return a/b;							//å¦‚æœç‚º/ç®—å¼ç‚ºa/b 
 		default:
 		{
-			printf("µL®Äªº¹Bºâ¤l \n");						//¦pªG³£¤£¬O¿é¥XµL®Äªº¹Bºâ¤l 
+			printf("ç„¡æ•ˆçš„é‹ç®—å­ \n");					//å¦‚æœéƒ½ä¸æ˜¯è¼¸å‡ºç„¡æ•ˆçš„é‹ç®—å­ 
 			return 0;
 		}	
 	}
 }
 
-void sort (int &A, int &B, int &C)							//¦Û­qªº¨ç¼Æsort() 
+void sort (int &A, int &B, int &C)							//è‡ªè¨‚çš„å‡½æ•¸sort() 
 {
-	int temp;												//©w¸qÁ{®ÉÅÜ¼Æ 
-	if (A > B)												//¦pªGA>B 
+	int temp;									//å®šç¾©è‡¨æ™‚è®Šæ•¸ 
+	if (A > B)									//å¦‚æœA>B 
 	{
-		temp=A;												//A©MB¥æ´« 
+		temp=A;									//Aå’ŒBäº¤æ› 
 		A=B;
 		B=temp;
 	}
-	if (B > C)												//¦pªGB>C 
+	if (B > C)									//å¦‚æœB>C 
 	{
-		temp=B;												//B©MC¥æ´« 
+		temp=B;									//Bå’ŒCäº¤æ› 
 		B=C;
 		C=temp;
 	}
-	if (A > B)												//¦pªGA¤S>B 
+	if (A > B)									//å¦‚æœAåˆ>B 
 	{
-		temp=A;												//A©MB¦A¦¸¥æ´« 
+		temp=A;									//Aå’ŒBå†æ¬¡äº¤æ› 
 		A=B;
 		B=temp;
 	}
