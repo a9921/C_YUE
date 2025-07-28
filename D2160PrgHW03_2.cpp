@@ -1,51 +1,51 @@
 /*===================================================================== 
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨ 
-§¹¦¨¤é´Á:2025/03/10
-ÀÉ¦W:D2160PrgHW03_3.CPP
-µ{¦¡¥\¯à:¥Î±è§Î¿n¤Àªk­pºâ¥k¦¡ªº­È
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³ 
+å®Œæˆæ—¥æœŸ:2025/03/10
+æª”å:D2160PrgHW03_3.CPP
+ç¨‹å¼åŠŸèƒ½:ç”¨æ¢¯å½¢ç©åˆ†æ³•è¨ˆç®—å³å¼çš„å€¼
 ===================================================================== */ 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-#define PI 3.14159						//©w¸q£k 
-#define START 0							//¿n¤À¤U¬É 
-#define END (3*PI) 						//¿n¤À¤W¬É3£k 
+#define PI 3.14159						//å®šç¾©Ï€ 
+#define START 0							//ç©åˆ†ä¸‹ç•Œ 
+#define END (3*PI) 						//ç©åˆ†ä¸Šç•Œ3Ï€ 
 
-double f(double x)						//©w¸q¿n¤À¨ç¼Æf(x)=¡Ôe^x + cos(x^2) 
+double f(double x)						//å®šç¾©ç©åˆ†å‡½æ•¸f(x)=âˆše^x + cos(x^2) 
 {
 	return sqrt(exp(x)+cos(x*x));
 }
 	
-double trap(int num)					//¥Î±è§Î¿n¤Àªk­pºâ¿n¤À 
+double trap(int num)						//ç”¨æ¢¯å½¢ç©åˆ†æ³•è¨ˆç®—ç©åˆ† 
 {
 	double a=START, b=END;
-	double h=(b-a)/num;					// °Ï¶¡¼e 
+	double h=(b-a)/num;					// å€é–“å¯¬ 
 	double sum=0;
 	
-	sum+=(f(a)+f(b))/2;					//­pºâf(a)¡Bf(b) 
+	sum+=(f(a)+f(b))/2;					//è¨ˆç®—f(a)ã€f(b) 
 	
-	for(int i=1; i<num; i++)			//²Ö¥[¤¤¶¡ÂI 
+	for(int i=1; i<num; i++)				//ç´¯åŠ ä¸­é–“é» 
 	{
 		double x=a+i*h;
 		sum+= f(x);
 	}
 		
-	return sum*h;						//­¼¤W°Ï¶¡¼e«× 
+	return sum*h;						//ä¹˜ä¸Šå€é–“å¯¬åº¦ 
 }
 
 int main()
 {
 	
 	int num;
-	printf("¿é¤J°Ï¶¡¼Æ:");				//¿é¤J°Ï¶¡¼Æ 
+	printf("è¼¸å…¥å€é–“æ•¸:");					//è¼¸å…¥å€é–“æ•¸ 
 	scanf("%d",&num); 
 	
-	double ans= trap(num);				//­pºâ¿n¤À 
+	double ans= trap(num);					//è¨ˆç®—ç©åˆ† 
 	
-	printf("¿n¤À½è¬°=%.4f \n",ans);		//¿é¥Xµ²ªG 
+	printf("ç©åˆ†è³ªç‚º=%.4f \n",ans);				//è¼¸å‡ºçµæœ 
 	
 	system("pause");
 	return 0;
