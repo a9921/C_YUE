@@ -1,64 +1,64 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/02/24
-ÀÉ¦W:D2160PrgHw06_01.CPP
-µ{¦¡¥\¯à:¦¨ÁZ³Ì¤j­È³Ì¤p­È¥­§¡¼Ğ·Ç®t­pºâ 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+å®Œæˆæ—¥æœŸ:2025/02/24
+æª”å:D2160PrgHw06_01.CPP
+ç¨‹å¼åŠŸèƒ½:æˆç¸¾æœ€å¤§å€¼æœ€å°å€¼å¹³å‡æ¨™æº–å·®è¨ˆç®— 
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define Num 5											//¬ì¥Ø¼Æ¬°5 
+#define Num 5							//ç§‘ç›®æ•¸ç‚º5 
 
 int main()
 {
-	char Name[100];										//©w¸q¿é¤J¦WºÙ¤Î¨äªø«× 
-	int score[Num], i, num;								//©w¸q¤À¼Æªºªø«× »P¨ä¥LÅÜ¼Æ 
-	double Min, Max, Mean, STD, Sum=0.0, SumSTD=0.0;	// ©w¸q³Ì¤j­È³Ì¤p­È¥­§¡¼Ğ·Ç®tÁ`©M 
+	char Name[100];						//å®šç¾©è¼¸å…¥åç¨±åŠå…¶é•·åº¦ 
+	int score[Num], i, num;					//å®šç¾©åˆ†æ•¸çš„é•·åº¦ èˆ‡å…¶ä»–è®Šæ•¸ 
+	double Min, Max, Mean, STD, Sum=0.0, SumSTD=0.0;	// å®šç¾©æœ€å¤§å€¼æœ€å°å€¼å¹³å‡æ¨™æº–å·®ç¸½å’Œ 
 	 
-	printf("½Ğ¿é¤J¦W¦r:");								//¿é¤J¦W¦r	 
+	printf("è«‹è¼¸å…¥åå­—:");					//è¼¸å…¥åå­—	 
 	gets(Name);
 	
 	i=0;
-	while(i<Num)										//·íi¤p©ó5®É°õ¦æ 
+	while(i<Num)						//ç•¶iå°æ–¼5æ™‚åŸ·è¡Œ 
 	{
-		printf("½Ğ¿é¤J¦¨ÁZ:");							//¿é¤J¦U¬ì¦¨ÁZ 
+		printf("è«‹è¼¸å…¥æˆç¸¾:");				//è¼¸å…¥å„ç§‘æˆç¸¾ 
 		scanf("%d",&score[i]);
 		
-		if(i==Num)										//·íiµ¥©ó5®É°±¤î 
+		if(i==Num)					//ç•¶iç­‰æ–¼5æ™‚åœæ­¢ 
 		{
-			printf("¿é¤J§¹¦¨ \n");
+			printf("è¼¸å…¥å®Œæˆ \n");
 			break;	
 		}
 		i++;
 	}
 	
-	Min=Max=score[0];									//±N³Ì¤j³Ì¤p­È¬°°}¦Cªº¼Æ­È 
-	for (i=0;i<Num;i++)									//i¤p©ó5®É°õ¦æ 
+	Min=Max=score[0];					//å°‡æœ€å¤§æœ€å°å€¼ç‚ºé™£åˆ—çš„æ•¸å€¼ 
+	for (i=0;i<Num;i++)					//iå°æ–¼5æ™‚åŸ·è¡Œ 
 	{
-		if(score[i]>Max)								//¦pªG°}¦Cªº¼Æ­È¤j©ó³Ì¤j­È 
-			Max=score[i];								//³Ì¤j­È¬°¨ä­È 
-		if(score[i]<Min)								//¦pªG°}¦Cªº¼Æ­È¤p©ó³Ì¤p­È 
-			Min=score[i];								//³Ì¤p­È¬°¨ä­È 			
+		if(score[i]>Max)				//å¦‚æœé™£åˆ—çš„æ•¸å€¼å¤§æ–¼æœ€å¤§å€¼ 
+			Max=score[i];				//æœ€å¤§å€¼ç‚ºå…¶å€¼ 
+		if(score[i]<Min)				//å¦‚æœé™£åˆ—çš„æ•¸å€¼å°æ–¼æœ€å°å€¼ 
+			Min=score[i];				//æœ€å°å€¼ç‚ºå…¶å€¼ 			
 			
 	}
 		
 	num=i;
-	for(i=0;i<num;i++)									//±N°}¦Cªº¦U¼Æ­È¬Û¥[ 
+	for(i=0;i<num;i++)					//å°‡é™£åˆ—çš„å„æ•¸å€¼ç›¸åŠ  
 		Sum+=score[i];
-	Mean=Sum/num;										//¥­§¡¬°Á`©M°£¥H¬ì¥Ø¼Æ¶q 
+	Mean=Sum/num;						//å¹³å‡ç‚ºç¸½å’Œé™¤ä»¥ç§‘ç›®æ•¸é‡ 
 	
 	for(i=0;i<Num;i++)
-		SumSTD+=pow(score[i]-Mean,2); 					//¼Æ­È´î¥h¥­§¡¥­¤è 
-	STD=sqrt((SumSTD)/(Num-1));							//¦b°£©óN-1¶}®Ú¸¹ 
+		SumSTD+=pow(score[i]-Mean,2); 			//æ•¸å€¼æ¸›å»å¹³å‡å¹³æ–¹ 
+	STD=sqrt((SumSTD)/(Num-1));				//åœ¨é™¤æ–¼N-1é–‹æ ¹è™Ÿ 
 	
 	
-	printf("©m¦W:%s \n",Name);							//Åã¥Ü¦U¶µªºµ²ªG 
-	printf("¥­§¡¬°:%.2f \n",Mean);
-	printf("³Ì¤p­È¬°:%.2f \n",Min);
-	printf("³Ì¤j­È¬°:%.2f \n",Max); 
-	printf("¼Ğ·Ç®t¬°:%.2f \n",STD);
+	printf("å§“å:%s \n",Name);				//é¡¯ç¤ºå„é …çš„çµæœ 
+	printf("å¹³å‡ç‚º:%.2f \n",Mean);
+	printf("æœ€å°å€¼ç‚º:%.2f \n",Min);
+	printf("æœ€å¤§å€¼ç‚º:%.2f \n",Max); 
+	printf("æ¨™æº–å·®ç‚º:%.2f \n",STD);
 	
 	
 	system ("pause");
