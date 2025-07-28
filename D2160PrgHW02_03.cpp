@@ -1,9 +1,9 @@
 /*
-�Ǹ�:1102160
-�m�W:���ʩ�
-�������:2025/03/03
-�ɦW:D2160PrgHw02_03.CPP
-�{���\��:�p��P�_BMI 
+學號:1102160
+姓名:陳廷岳
+完成日期:2025/03/03
+檔名:D2160PrgHw02_03.CPP
+程式功能:計算判斷BMI 
 */
 
 #include<stdio.h>
@@ -12,32 +12,32 @@
 
 int main()
 {
-	double cm, kg, BMI, mkg, fkg;				//�w�q�����B�魫�BBMI�B�k�ʲz�Q�魫�B�k�ʲz�Q�魫���ܼ� 
+	double cm, kg, BMI, mkg, fkg;					//定義身高、體重、BMI、男性理想體重、女性理想體重的變數 
 	
-	printf("��J����cm�P�魫kg:");				//��J�����P�魫 
+	printf("輸入身高cm與體重kg:");					//輸入身高與體重 
 	scanf("%lf %lf",&cm, &kg); 
 	
-	BMI=kg/pow((cm/100),2);						//�p��BMI�P�k�ʲz�Q�魫�P�k�ʲz�Q�魫 
+	BMI=kg/pow((cm/100),2);						//計算BMI與男性理想體重與女性理想體重 
 	mkg=(cm-80)*0.7; 
 	fkg=(cm-70)*0.6; 
 	
 	
-	printf("�A��BMI��%.2f \n",BMI);				//��XBMI�B�k�ʲz�Q�魫�P�k�ʲz�Q�魫�����G 
-	printf("�k�ʲz�Q�魫��%.1f�F�k�ʲz�Q�魫��%.1f \n", mkg, fkg); 
+	printf("你的BMI為%.2f \n",BMI);					//輸出BMI、男性理想體重與女性理想體重的結果 
+	printf("男性理想體重為%.1f；女性理想體重為%.1f \n", mkg, fkg); 
 	
-	if(BMI<20)									//�P�_BMI�O�L�G�B���`�B�L���B�έD�A�ÿ�X���G 
-		printf("�ӽG \n");
+	if(BMI<20)							//判斷BMI是過瘦、正常、過重、肥胖，並輸出結果 
+		printf("太瘦 \n");
 	else
 	{
 		if(BMI <=25)
-			printf("���` \n");
+			printf("正常 \n");
 		else
 		{
 			if(BMI <28)
-				printf("�L�� \n");
+				printf("過重 \n");
 			else
 			{
-				printf("�έD \n"); 
+				printf("肥胖 \n"); 
 			} 
 		} 
 	}
