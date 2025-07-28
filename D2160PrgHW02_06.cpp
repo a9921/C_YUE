@@ -1,9 +1,9 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/03/03
-ÀÉ¦W:D2160PrgHw02_06.CPP
-µ{¦¡¥\¯à:§PÂ_¤ë¥÷©u¸` 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+å®Œæˆæ—¥æœŸ:2025/03/03
+æª”å:D2160PrgHw02_06.CPP
+ç¨‹å¼åŠŸèƒ½:åˆ¤æ–·æœˆä»½å­£ç¯€ 
 */
 
 #include<stdio.h>
@@ -12,27 +12,27 @@
 
 int main()
 {
-	int m;							//©w¸q¤ë¥÷ÅÜ¼Æ 
+	int m;							//å®šç¾©æœˆä»½è®Šæ•¸ 
 	
-	printf("¿é¤J¤ë¥÷:");			//¿é¤J¤ë¥÷ 
+	printf("è¼¸å…¥æœˆä»½:");					//è¼¸å…¥æœˆä»½ 
 	scanf("%d",&m) ;
 	
-	switch(m)						//½T»{¤ë¥÷©u¸` 
+	switch(m)						//ç¢ºèªæœˆä»½å­£ç¯€ 
 	{
 		case 3: case 4: case 5:
-			printf("¬K \n");
+			printf("æ˜¥ \n");
 			break; 
 		case 6: case 7: case 8: 
-			printf("®L \n");
+			printf("å¤ \n");
 			break;
 		case 9: case 10: case 11:
-			printf("¬î \n");
+			printf("ç§‹ \n");
 			break;
 		case 12: case 1: case 2:
-			printf("¥V \n"); 
+			printf("å†¬ \n"); 
 			break;
 		default:
-			printf("¿é¤J¿ù»~ \n"); 	//¼Æ¦r¤£¦b1~12 
+			printf("è¼¸å…¥éŒ¯èª¤ \n"); 			//æ•¸å­—ä¸åœ¨1~12 
 			break;
 	} 
 	
