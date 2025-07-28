@@ -1,9 +1,8 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/02/24
-ÀÉ¦W:D2160PrgHw01_03.CPP
-µ{¦¡¥\¯à:­pºâ¤@¤¸¤G¦¸¤èµ{¦¡ 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+æª”å:D2160PrgHw01_03.CPP
+ç¨‹å¼åŠŸèƒ½:è¨ˆç®—ä¸€å…ƒäºŒæ¬¡æ–¹ç¨‹å¼ 
 */
 
 #include <stdio.h>
@@ -12,15 +11,15 @@
 
 int main()
 {
-    float a, b, c;		//¸ê®Æ¦ÛÅÜ¼Æ 
-    double X1,X2;		//¨ÌÅÜ¼Æ¤G¸Ñ 
+    float a, b, c;						//è³‡æ–™è‡ªè®Šæ•¸ 
+    double X1,X2;						//ä¾è®Šæ•¸äºŒè§£ 
     
-    printf("¿é¤Ja¡Bb¡Bc ,a¡Bb¡Bc­È­nº¡¨¬b^2>=4ac:");		//¸ê®Æ¿é¤J 
+    printf("è¼¸å…¥aã€bã€c ,aã€bã€cå€¼è¦æ»¿è¶³b^2>=4ac:");		//è³‡æ–™è¼¸å…¥ 
     scanf("%f %f %f", &a, &b, &c);
     
-	X1=(-b+sqrt(pow(b,2)-4*a*c))/(2*a);			//¿é¥Xµ²ªG1 
-	X2=(-b-sqrt(pow(b,2)-4*a*c))/(2*a);			//¿é¥Xµ²ªG2 
-	printf("¤@¤¸¤G¦¸¤èµ{¸Ñ=%.2f¡B%.2f\n",X1, X2);
+	X1=(-b+sqrt(pow(b,2)-4*a*c))/(2*a);			//è¼¸å‡ºçµæžœ1 
+	X2=(-b-sqrt(pow(b,2)-4*a*c))/(2*a);			//è¼¸å‡ºçµæžœ2 
+	printf("ä¸€å…ƒäºŒæ¬¡æ–¹ç¨‹è§£=%.2fã€%.2f\n",X1, X2);
     
     system("pause");
     return 0;
