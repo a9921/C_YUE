@@ -1,62 +1,62 @@
 /*
-¾Ç¸¹:1102160
-©m¦W:³¯§Ê©¨
-§¹¦¨¤é´Á:2025/02/24
-ÀÉ¦W:D2160PrgHw06_03.CPP
-µ{¦¡¥\¯à:¼ÒÀÀ±m¨é¶}¼ú¸¹½X 
+å­¸è™Ÿ:1102160
+å§“å:é™³å»·å²³
+å®Œæˆæ—¥æœŸ:2025/02/24
+æª”å:D2160PrgHw06_03.CPP
+ç¨‹å¼åŠŸèƒ½:æ¨¡æ“¬å½©åˆ¸é–‹çè™Ÿç¢¼ 
 */
 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define Lotto 7									//¶}¼ú¸¹½X¬°7­Ó 
-#define Max 42									//±m²y¦³42­Ó 
+#define Lotto 7								//é–‹çè™Ÿç¢¼ç‚º7å€‹ 
+#define Max 42								//å½©çƒæœ‰42å€‹ 
 
-int repeat (int Total[], int size, int Num)		//ÀË´ú¼Æ­È¬O§_­«½Æªº¨ç¼Æ 
+int repeat (int Total[], int size, int Num)				//æª¢æ¸¬æ•¸å€¼æ˜¯å¦é‡è¤‡çš„å‡½æ•¸ 
 {
-	for(int i=0;i<size;i++)						// ·íi¤p©ó number[]ªº¼Æ¦r®É°õ¦æ 
+	for(int i=0;i<size;i++)						// ç•¶iå°æ–¼ number[]çš„æ•¸å­—æ™‚åŸ·è¡Œ 
 	{
-		if(Total[i]==Num)						//¦pªG¸¹½X¤w¸g¦s¦b 
-			return 1;							//­«©â¤@¦¸ 
+		if(Total[i]==Num)					//å¦‚æœè™Ÿç¢¼å·²ç¶“å­˜åœ¨ 
+			return 1;					//é‡æŠ½ä¸€æ¬¡ 
 	}
 	return 0;
 }
 
-void random (int number[])						//ÀH¾÷²£¥Í7­Ó¸¹½Xªº¨ç¼Æ 
+void random (int number[])						//éš¨æ©Ÿç”¢ç”Ÿ7å€‹è™Ÿç¢¼çš„å‡½æ•¸ 
 {
 	int i, num;
 	
-	for (i=0;i<Lotto;i++)						//·íi¤p©óLottoªº7®É°õ¦æ 
+	for (i=0;i<Lotto;i++)						//ç•¶iå°æ–¼Lottoçš„7æ™‚åŸ·è¡Œ 
 	{
 		do
 		{
-			num=rand() % Max+1;					//²£¥Í1~42ªºÀH¾÷¼Æ 
-		}while(repeat(number, i, num));			//­Y¥Ñ­«½Æ­«·s²£¥Í 
+			num=rand() % Max+1;				//ç”¢ç”Ÿ1~42çš„éš¨æ©Ÿæ•¸ 
+		}while(repeat(number, i, num));				//è‹¥ç”±é‡è¤‡é‡æ–°ç”¢ç”Ÿ 
 		
-		number[i]=num;							//²£¥Íªº¼Æ¦r¦s¤J°}¦C 
+		number[i]=num;						//ç”¢ç”Ÿçš„æ•¸å­—å­˜å…¥é™£åˆ— 
 	}
 }
 
 
 int main()
 {
-	int number[Lotto]={0};						//ªì©l¤Æ°}¦C 
+	int number[Lotto]={0};						//åˆå§‹åŒ–é™£åˆ— 
 	char choice;
-	srand(time(NULL));							//²£¥ÍÀH¾÷¼Æ 
+	srand(time(NULL));						//ç”¢ç”Ÿéš¨æ©Ÿæ•¸ 
 	
 	do
 	{
-		random(number);							//²£¥Í¤¤¼ú¸¹½X 
-		printf("¤¤¼ú¸¹½X:");
-		for (int i=0; i<Lotto; i++)				//·íi¤p©ó7®É°õ¦æ 
-			printf("%d ", number[i]);			//Åã¥Ü©â¥Xªº¸¹½X 
+		random(number);						//ç”¢ç”Ÿä¸­çè™Ÿç¢¼ 
+		printf("ä¸­çè™Ÿç¢¼:");
+		for (int i=0; i<Lotto; i++)				//ç•¶iå°æ–¼7æ™‚åŸ·è¡Œ 
+			printf("%d ", number[i]);			//é¡¯ç¤ºæŠ½å‡ºçš„è™Ÿç¢¼ 
 		printf("\n");
 	
-		printf("¬O§_Ä~Äò?(y/n)");				//°İ¬O§_­«·s©â¨ú 
+		printf("æ˜¯å¦ç¹¼çºŒ?(y/n)");				//å•æ˜¯å¦é‡æ–°æŠ½å– 
 		scanf(" %c",&choice);
 	
-	}while(choice=='y'||choice=='Y');			//­Y¿é¤Jy¡BY«hÄ~Äò 
+	}while(choice=='y'||choice=='Y');				//è‹¥è¼¸å…¥yã€Yå‰‡ç¹¼çºŒ 
 	
 	system("pause");
 	return 0;
