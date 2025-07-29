@@ -1,61 +1,61 @@
 /* ===================================================================== 
-¾Ç    ¸¹ ¡G1102160                                                  
-©m    ¦W ¡G³¯§Ê©¨ 
-§¹¦¨¤é´Á ¡G2025/04/24                                                
-ÀÉ    ¦W ¡GD2160PrgHw08_2.CPP                                       
-µ{¦¡¥\¯à ¡G¯x°}­pºâ      
+å­¸    è™Ÿ ï¼š1102160                                                  
+å§“    å ï¼šé™³å»·å²³ 
+å®Œæˆæ—¥æœŸ ï¼š2025/04/24                                                
+æª”    å ï¼šD2160PrgHw08_2.CPP                                       
+ç¨‹å¼åŠŸèƒ½ ï¼šçŸ©é™£è¨ˆç®—      
 ======================================================================== */ 
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void Show2DArray(int *pA, int row, int column)			//©w¸q¨ç¼ÆShow2DArray 
+void Show2DArray(int *pA, int row, int column)						//å®šç¾©å‡½æ•¸Show2DArray 
 {
-	for(int i=0; i<row; i++)							//·íi¤p©ó¦æ¼Æ®É°õ¦æ 
+	for(int i=0; i<row; i++)							//ç•¶iå°æ–¼è¡Œæ•¸æ™‚åŸ·è¡Œ 
 	{
-		for(int j=0; j<column; j++)						//·íj¤p©ó¦C¼Æ®É°õ¦æ 
-			printf("%d\t", *(pA+i*column+j));			//¿é¤J«ü¼ĞpA¦ì¸mªº­È 
+		for(int j=0; j<column; j++)						//ç•¶jå°æ–¼åˆ—æ•¸æ™‚åŸ·è¡Œ 
+			printf("%d\t", *(pA+i*column+j));				//è¼¸å…¥æŒ‡æ¨™pAä½ç½®çš„å€¼ 
 		printf("\n");
 	}
 	return;
 }
 
-void MatrixAdd(int *pA, int *pB, int *pC, int row, int column)	//©w¸q MatrixAdd¨ç¼Æ 
+void MatrixAdd(int *pA, int *pB, int *pC, int row, int column)				//å®šç¾© MatrixAddå‡½æ•¸ 
 {
-	for(int i=0; i<row; i++)									//·íi¤p©ó¦æ¼Æ®É°õ¦æ
+	for(int i=0; i<row; i++)							//ç•¶iå°æ–¼è¡Œæ•¸æ™‚åŸ·è¡Œ
 	{
-		for(int j=0; j<column; j++)								//·íj¤p©ó¦C¼Æ®É°õ¦æ
-			*(pC+i*column+j)=*(pA+i*column+j)+*(pB+i*column+j); //«ü¼ĞpCªº­È¬°«ü¼ĞpA¦ì¸mªº­È¥[¤W«ü¼ĞpB¦ì¸mªº­È 
+		for(int j=0; j<column; j++)						//ç•¶jå°æ–¼åˆ—æ•¸æ™‚åŸ·è¡Œ
+			*(pC+i*column+j)=*(pA+i*column+j)+*(pB+i*column+j); 		//æŒ‡æ¨™pCçš„å€¼ç‚ºæŒ‡æ¨™pAä½ç½®çš„å€¼åŠ ä¸ŠæŒ‡æ¨™pBä½ç½®çš„å€¼ 
 	}
 }
 
-void MatrixSubtract(int *pA, int *pB, int *pC, int row, int column)	//©w¸q MatrixSubtract 
+void MatrixSubtract(int *pA, int *pB, int *pC, int row, int column)			//å®šç¾© MatrixSubtract 
 {
-	for(int i=0; i<row; i++)										//·íi¤p©ó¦æ¼Æ®É°õ¦æ 
+	for(int i=0; i<row; i++)							//ç•¶iå°æ–¼è¡Œæ•¸æ™‚åŸ·è¡Œ 
 	{
-		for(int j=0; j<column; j++)									//·íj¤p©ó¦C¼Æ®É°õ¦æ
-			*(pC+i*column+j)=*(pA+i*column+j)-*(pB+i*column+j);		//«ü¼ĞpCªº­È¬°«ü¼ĞpA¦ì¸mªº­È´î¥h«ü¼ĞpB¦ì¸mªº­È
+		for(int j=0; j<column; j++)						//ç•¶jå°æ–¼åˆ—æ•¸æ™‚åŸ·è¡Œ
+			*(pC+i*column+j)=*(pA+i*column+j)-*(pB+i*column+j);		//æŒ‡æ¨™pCçš„å€¼ç‚ºæŒ‡æ¨™pAä½ç½®çš„å€¼æ¸›å»æŒ‡æ¨™pBä½ç½®çš„å€¼
 	}
 }
 
-void MatrixTranspose(int *pA, int *pB, int row, int column)			//©w¸q MatrixTranspose 
+void MatrixTranspose(int *pA, int *pB, int row, int column)				//å®šç¾© MatrixTranspose 
 {
-	for(int i=0; i<row; i++)										//·íi¤p©ó¦æ¼Æ®É°õ¦æ 
+	for(int i=0; i<row; i++)							//ç•¶iå°æ–¼è¡Œæ•¸æ™‚åŸ·è¡Œ 
 	{
-		for(int j=0; j<column; j++)									//·íj¤p©ó¦C¼Æ®É°õ¦æ 
-			*(pB+j*row+i)=*(pA+i*column+j);							//«ü¼ĞpB¦ì¸mªº­È¬°pA¦ì¸mªº­È+i­¼©ó¦C¼Æ+j 
+		for(int j=0; j<column; j++)						//ç•¶jå°æ–¼åˆ—æ•¸æ™‚åŸ·è¡Œ 
+			*(pB+j*row+i)=*(pA+i*column+j);					//æŒ‡æ¨™pBä½ç½®çš„å€¼ç‚ºpAä½ç½®çš„å€¼+iä¹˜æ–¼åˆ—æ•¸+j 
 	}
 }
 
-void MatrixMuti(int *pA, int *pB, int *pC, int row1, int column1, int column2)	//©w¸q MatrixMuti
+void MatrixMuti(int *pA, int *pB, int *pC, int row1, int column1, int column2)		//å®šç¾© MatrixMuti
 {
-	for(int i=0; i<row1; i++)													//·íi¤p©ópA¦æ¼Æ®É°õ¦æ
+	for(int i=0; i<row1; i++)							//ç•¶iå°æ–¼pAè¡Œæ•¸æ™‚åŸ·è¡Œ
 	{
-		for(int j=0; j<column2; j++)											//·íj¤p©ópB¦C¼Æ®É°õ¦æ 
+		for(int j=0; j<column2; j++)						//ç•¶jå°æ–¼pBåˆ—æ•¸æ™‚åŸ·è¡Œ 
 		{
-			*(pC+i*column2+j)=0;												//²MªÅpC¦ì¸mªº­È 
-			for(int k=0; k<column1; k++)										//·ík¤p©ópA¦C¼Æ®É°õ¦æ 
-				*(pC+i*column2+j)+=*(pA+i*column1+k) * *(pB+k*column2+j);		//«ü¼ĞpC+i*pB¦C¼Æ+jªº¦ì¸mªº­È¬°¥[Á`«ü¼ĞpA+i*pA¦C¼Æ+k¦ì¸mªº­È­¼©ó«ü¼ĞpB+k*pB¦C¼Æ+j¦ì¸mªº­È 
+			*(pC+i*column2+j)=0;						//æ¸…ç©ºpCä½ç½®çš„å€¼ 
+			for(int k=0; k<column1; k++)					//ç•¶kå°æ–¼pAåˆ—æ•¸æ™‚åŸ·è¡Œ 
+				*(pC+i*column2+j)+=*(pA+i*column1+k) * *(pB+k*column2+j);		//æŒ‡æ¨™pC+i*pBåˆ—æ•¸+jçš„ä½ç½®çš„å€¼ç‚ºåŠ ç¸½æŒ‡æ¨™pA+i*pAåˆ—æ•¸+kä½ç½®çš„å€¼ä¹˜æ–¼æŒ‡æ¨™pB+k*pBåˆ—æ•¸+jä½ç½®çš„å€¼ 
 		}
 	}
 }
@@ -64,27 +64,27 @@ void MatrixMuti(int *pA, int *pB, int *pC, int row1, int column1, int column2)	/
 
 int main()
 {
-	int A[][2]={{1,2},{3,4},{5,6}};							//¤G¶¥°}¦CAªº­È 
-	int B[][2]={{2,4},{6,8},{10,12}};						//¤G¶¥°}¦CAªº­È
-	int C[][4]={{1,2,3,4},{5,6,7,8}};						//¤G¶¥°}¦CAªº­È 
-	int D[3][2], E[3][2], AT[2][3], temp[2][2], F[2][4];	//©w¸q°}¦CD¡BE¡BAT¡Btemp¡BFªº¦æ¦C¼Æ 
+	int A[][2]={{1,2},{3,4},{5,6}};							//äºŒéšé™£åˆ—Açš„å€¼ 
+	int B[][2]={{2,4},{6,8},{10,12}};						//äºŒéšé™£åˆ—Açš„å€¼
+	int C[][4]={{1,2,3,4},{5,6,7,8}};						//äºŒéšé™£åˆ—Açš„å€¼ 
+	int D[3][2], E[3][2], AT[2][3], temp[2][2], F[2][4];				//å®šç¾©é™£åˆ—Dã€Eã€ATã€tempã€Fçš„è¡Œåˆ—æ•¸ 
 	
-	MatrixAdd(&A[0][0], &B[0][0], &D[0][0], 3, 2);			//©I¥s MatrixAdd¿é¤J°}¦CA¡BB¦æ¼Æ3¦C¼Æ2 
-	printf("D=A+B: \n");									//¦L¥XÃD¥Ø 
-	Show2DArray(&D[0][0], 3, 2);							//©I¥s Show2DArray¿é¥X°}¦CDªº­È¦æ¼Æ3¦C¼Æ2 
+	MatrixAdd(&A[0][0], &B[0][0], &D[0][0], 3, 2);					//å‘¼å« MatrixAddè¼¸å…¥é™£åˆ—Aã€Bè¡Œæ•¸3åˆ—æ•¸2 
+	printf("D=A+B: \n");								//å°å‡ºé¡Œç›® 
+	Show2DArray(&D[0][0], 3, 2);							//å‘¼å« Show2DArrayè¼¸å‡ºé™£åˆ—Dçš„å€¼è¡Œæ•¸3åˆ—æ•¸2 
 	
-	MatrixSubtract(&B[0][0], &A[0][0], &E[0][0], 3, 2);		//©I¥s MatrixSubtract¿é¤J°}¦CA¡BB¦æ¼Æ3¦C¼Æ2  
-	printf("E=B-A: \n");									//¦L¥XÃD¥Ø 
-	Show2DArray(&E[0][0], 3, 2);							//©I¥s Show2DArray¿é¥X°}¦CEªº­È¦æ¼Æ3¦C¼Æ2 
+	MatrixSubtract(&B[0][0], &A[0][0], &E[0][0], 3, 2);				//å‘¼å« MatrixSubtractè¼¸å…¥é™£åˆ—Aã€Bè¡Œæ•¸3åˆ—æ•¸2  
+	printf("E=B-A: \n");								//å°å‡ºé¡Œç›® 
+	Show2DArray(&E[0][0], 3, 2);							//å‘¼å« Show2DArrayè¼¸å‡ºé™£åˆ—Eçš„å€¼è¡Œæ•¸3åˆ—æ•¸2 
 	
-	MatrixTranspose(&A[0][0], &AT[0][0], 3, 2);				//©I¥sMatrixTranspose¿é¤J°}¦CA¦æ¼Æ3¦C¼Æ2   
-	printf("AT=At \n");										//¦L¥XÃD¥Ø 
-	Show2DArray(&AT[0][0], 2, 3);							//©I¥s Show2DArray¿é¥X°}¦CATªº­È¦æ¼Æ2¦C¼Æ3 
+	MatrixTranspose(&A[0][0], &AT[0][0], 3, 2);					//å‘¼å«MatrixTransposeè¼¸å…¥é™£åˆ—Aè¡Œæ•¸3åˆ—æ•¸2   
+	printf("AT=At \n");								//å°å‡ºé¡Œç›® 
+	Show2DArray(&AT[0][0], 2, 3);							//å‘¼å« Show2DArrayè¼¸å‡ºé™£åˆ—ATçš„å€¼è¡Œæ•¸2åˆ—æ•¸3 
 	
-	MatrixMuti(&AT[0][0], &B[0][0], &temp[0][0], 2, 3, 2);	//©I¥sMatrixMuti¿é¤J°}¦CAT¡BB¡AAT¦æ¼Æ2 AT¦C¼Æ3 B¦C¼Æ2 
-	MatrixMuti(&temp[0][0], &C[0][0], &F[0][0], 2, 2, 4);	//©I¥sMatrixMuti¿é¤J°}¦Ctemp¡BC¡Atemp¦æ¼Æ2 temp¦C¼Æ3 C¦C¼Æ2 
-	printf("F=AT*B*C: \n");									//¦L¥XÃD¥Ø 
-	Show2DArray(&F[0][0], 2, 4);							//©I¥s Show2DArray¿é¥X°}¦CFªº­È¦æ¼Æ2¦C¼Æ4 
+	MatrixMuti(&AT[0][0], &B[0][0], &temp[0][0], 2, 3, 2);				//å‘¼å«MatrixMutiè¼¸å…¥é™£åˆ—ATã€Bï¼ŒATè¡Œæ•¸2 ATåˆ—æ•¸3 Båˆ—æ•¸2 
+	MatrixMuti(&temp[0][0], &C[0][0], &F[0][0], 2, 2, 4);				//å‘¼å«MatrixMutiè¼¸å…¥é™£åˆ—tempã€Cï¼Œtempè¡Œæ•¸2 tempåˆ—æ•¸3 Cåˆ—æ•¸2 
+	printf("F=AT*B*C: \n");								//å°å‡ºé¡Œç›® 
+	Show2DArray(&F[0][0], 2, 4);							//å‘¼å« Show2DArrayè¼¸å‡ºé™£åˆ—Fçš„å€¼è¡Œæ•¸2åˆ—æ•¸4 
 	
 	system("pause");
 	return 0;
