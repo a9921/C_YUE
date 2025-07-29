@@ -1,26 +1,26 @@
 /* ===================================================================== 
-¾Ç    ¸¹ ¡G1102160                                                  
-©m    ¦W ¡G³¯§Ê©¨ 
-§¹¦¨¤é´Á ¡G2025/04/07                                                
-ÀÉ    ¦W ¡GD2160PrgHw07_2.CPP                                       
-µ{¦¡¥\¯à ¡G¾Ç¥Íªº¦U¬ì¤À¼Æ»P¥­§¡¼Ğ·Ç®tµ²ºc¨ç¼Æ       
+å­¸    è™Ÿ ï¼š1102160                                                  
+å§“    å ï¼šé™³å»·å²³ 
+å®Œæˆæ—¥æœŸ ï¼š2025/04/07                                                
+æª”    å ï¼šD2160PrgHw07_2.CPP                                       
+ç¨‹å¼åŠŸèƒ½ ï¼šå­¸ç”Ÿçš„å„ç§‘åˆ†æ•¸èˆ‡å¹³å‡æ¨™æº–å·®çµæ§‹å‡½æ•¸       
 ======================================================================== */ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
-#define Student_N 3							//¾Ç¥Í¤H¼Æ¬°3 
-#define Subject 5							//¬ì¥Ø¼Æ¬°5 
+#define Student_N 3								//å­¸ç”Ÿäººæ•¸ç‚º3 
+#define Subject 5								//ç§‘ç›®æ•¸ç‚º5 
 
-struct Date									//¤@¯Åµ²ºc«¬ºADate¡A¥]§t¦~¤ë¤é 
+struct Date									//ä¸€ç´šçµæ§‹å‹æ…‹Dateï¼ŒåŒ…å«å¹´æœˆæ—¥ 
 {
 	int year;
 	int month;
 	int day;
 };
 
-struct Student								//¤G¯Åµ²ºc«¬ºAStudent¡A¥]§t©m¦W¡B¥Í¤é(¤@¯Åµ²ºcDate)¡B¤À¼Æ¡B¥­§¡¡B¼Ğ·Ç®t 
+struct Student									//äºŒç´šçµæ§‹å‹æ…‹Studentï¼ŒåŒ…å«å§“åã€ç”Ÿæ—¥(ä¸€ç´šçµæ§‹Date)ã€åˆ†æ•¸ã€å¹³å‡ã€æ¨™æº–å·® 
 {
 	char name[20];
 	struct Date birthday;
@@ -31,60 +31,60 @@ struct Student								//¤G¯Åµ²ºc«¬ºAStudent¡A¥]§t©m¦W¡B¥Í¤é(¤@¯Åµ²ºcDate)¡B¤À¼Æ¡
 
 int main()
 {
-	int i, j;									//¾ã¼ÆÅÜ¼Æi¡Bj 
-	float Sum, Sum_STD;							//¯BÂI¼ÆÅÜ¼Æ Sum¡BSum_STD 
-	struct Student A[Student_N];				//¤G¯Åµ²ºc¥NºÙA[] 
-	const char* Subject_Name[Subject] = {"¹q¼v", "­µ¼Ö", "´Î²y", "¨¬²y", "¦Ğ²y"};		//¤@¯Åµ²ºc¬ì¥Ø¦WºÙ 
+	int i, j;								//æ•´æ•¸è®Šæ•¸iã€j 
+	float Sum, Sum_STD;							//æµ®é»æ•¸è®Šæ•¸ Sumã€Sum_STD 
+	struct Student A[Student_N];						//äºŒç´šçµæ§‹ä»£ç¨±A[] 
+	const char* Subject_Name[Subject] = {"é›»å½±", "éŸ³æ¨‚", "æ£’çƒ", "è¶³çƒ", "ç¾½çƒ"};		//ä¸€ç´šçµæ§‹ç§‘ç›®åç¨± 
 
-	for (i = 0; i < Student_N; i++)						//·íI¤p©ó¾Ç¥Í¼Æ®É°õ¦æ 
+	for (i = 0; i < Student_N; i++)						//ç•¶Iå°æ–¼å­¸ç”Ÿæ•¸æ™‚åŸ·è¡Œ 
 	{
-		printf("²Ä%d¦ì©m¦W:", i + 1);					//¿é¤J²Äi+1¦ì©m¦W	 
+		printf("ç¬¬%dä½å§“å:", i + 1);					//è¼¸å…¥ç¬¬i+1ä½å§“å	 
 		fgets(A[i].name, sizeof(A[i].name), stdin);		 
-		A[i].name[strcspn(A[i].name, "\n")] = '\0'; 	//¥h°£fgetªº\n 
+		A[i].name[strcspn(A[i].name, "\n")] = '\0'; 			//å»é™¤fgetçš„\n 
 
-		printf("¦è¤¸¦~:");								//¿é¤J¦è¤¸¦~ 
+		printf("è¥¿å…ƒå¹´:");						//è¼¸å…¥è¥¿å…ƒå¹´ 
 		scanf("%d", &A[i].birthday.year);
-		printf("¤ë¥÷:");								//¿é¤J¤ë¥÷ 
+		printf("æœˆä»½:");						//è¼¸å…¥æœˆä»½ 
 		scanf("%d", &A[i].birthday.month);
-		printf("¤é:");									//¿é¤J¤é´Á 
+		printf("æ—¥:");							//è¼¸å…¥æ—¥æœŸ 
 		scanf("%d", &A[i].birthday.day);
 
-		while (getchar() != '\n');  					//²M²z½w½Ä°Ï 
+		while (getchar() != '\n');  					//æ¸…ç†ç·©è¡å€ 
 
-		Sum = 0.0;										//¤À¼ÆÁ`©M¬°0 
-		Sum_STD = 0.0;									//¤À¼ÆºØ¦X(¼Ğ·Ç®t)¬°0 
+		Sum = 0.0;							//åˆ†æ•¸ç¸½å’Œç‚º0 
+		Sum_STD = 0.0;							//åˆ†æ•¸ç¨®åˆ(æ¨™æº–å·®)ç‚º0 
 
-		for (j = 0; j < Subject; j++)					//¦pªGj¤p©ó¬ì¥Ø¼Æ®É°õ¦æ 
+		for (j = 0; j < Subject; j++)					//å¦‚æœjå°æ–¼ç§‘ç›®æ•¸æ™‚åŸ·è¡Œ 
 		{
-			printf("%s¦¨ÁZ:", Subject_Name[j]);			//¿é¤JSubjectªº²Äj¬ìªº¦¨ÁZ 
+			printf("%sæˆç¸¾:", Subject_Name[j]);			//è¼¸å…¥Subjectçš„ç¬¬jç§‘çš„æˆç¸¾ 
 			scanf("%d", &A[i].score[j]);
-			Sum += A[i].score[j]; 						//¥[Á`¦Ü¤À¼ÆÁ`©M 
+			Sum += A[i].score[j]; 					//åŠ ç¸½è‡³åˆ†æ•¸ç¸½å’Œ 
 		}
-		A[i].ave = Sum / Subject; 						//¥­§¡¬°¤À¼ÆÁ`©M°£©ó¬ì¥Ø¼Æ 
+		A[i].ave = Sum / Subject; 					//å¹³å‡ç‚ºåˆ†æ•¸ç¸½å’Œé™¤æ–¼ç§‘ç›®æ•¸ 
 		
 
-		for (j = 0; j < Subject; j++)					//¦pªGj¤p©ó¬ì¥Ø¼Æ®É°õ¦æ 
+		for (j = 0; j < Subject; j++)					//å¦‚æœjå°æ–¼ç§‘ç›®æ•¸æ™‚åŸ·è¡Œ 
 		{
-			Sum_STD += pow(A[i].score[j] - A[i].ave, 2); 	//¤À¼ÆÁ`©M(¼Ğ·Ç®t)¬°²Äi¦ì¾Ç¥Íªºj¤À¼Æ´î¥h¥­§¡¥­¤è¥[Á` 
+			Sum_STD += pow(A[i].score[j] - A[i].ave, 2); 		//åˆ†æ•¸ç¸½å’Œ(æ¨™æº–å·®)ç‚ºç¬¬iä½å­¸ç”Ÿçš„jåˆ†æ•¸æ¸›å»å¹³å‡å¹³æ–¹åŠ ç¸½ 
 		}
-		A[i].STD = sqrt(Sum_STD / Subject); 			// ¼Ğ·Ç®t¬°¤À¼ÆÁ`©M(¼Ğ·Ç®t)°£©ó¬ì¥Ø¼Æ¶}®Ú¸¹ 
+		A[i].STD = sqrt(Sum_STD / Subject); 				// æ¨™æº–å·®ç‚ºåˆ†æ•¸ç¸½å’Œ(æ¨™æº–å·®)é™¤æ–¼ç§‘ç›®æ•¸é–‹æ ¹è™Ÿ 
 
-		while (getchar() != '\n');						//²M°£½w½Ä°Ï 
+		while (getchar() != '\n');					//æ¸…é™¤ç·©è¡å€ 
 	}
 	
-	printf("\n%20s %12s", "©m¦W", "¥Í¤é");				//Åã¥Ü©m¦W¥Í¤éªº¼ĞÃD 
-	for (i = 0; i < Subject; i++)						//¦pªGi¤p©ó¬ì¥Ø¼Æ«K°õ¦æ 
-		printf("%10s", Subject_Name[i]);				//¿é¥X²Äi­Ó¬ì¥Ø¦Wªº¼ĞÃD 
-	printf("%10s %10s \n", "¥­§¡", "¼Ğ·Ç®t");			//¿é¥X¥­§¡¡B¼Ğ·Ç®tªº¼ĞÃD 
+	printf("\n%20s %12s", "å§“å", "ç”Ÿæ—¥");					//é¡¯ç¤ºå§“åç”Ÿæ—¥çš„æ¨™é¡Œ 
+	for (i = 0; i < Subject; i++)						//å¦‚æœiå°æ–¼ç§‘ç›®æ•¸ä¾¿åŸ·è¡Œ 
+		printf("%10s", Subject_Name[i]);				//è¼¸å‡ºç¬¬iå€‹ç§‘ç›®åçš„æ¨™é¡Œ 
+	printf("%10s %10s \n", "å¹³å‡", "æ¨™æº–å·®");				//è¼¸å‡ºå¹³å‡ã€æ¨™æº–å·®çš„æ¨™é¡Œ 
 	
-	for (i = 0; i < Student_N; i++)						//¦pªGi¤p©ó¾Ç¥Í¼Æ®É°õ¦æ 
+	for (i = 0; i < Student_N; i++)						//å¦‚æœiå°æ–¼å­¸ç”Ÿæ•¸æ™‚åŸ·è¡Œ 
 	{
-		printf("%20s %10d/%d/%d", A[i].name, A[i].birthday.year, A[i].birthday.month, A[i].birthday.day);	//Åã¥ÜStudent[i]ªº©m¦W¡A¥Í¤é¦~¤ë¤é 
-		for (j = 0; j < Subject; j++)					//¦pªGj¤p©ó¬ì¥Ø¼Æ®É°õ¦æ 
+		printf("%20s %10d/%d/%d", A[i].name, A[i].birthday.year, A[i].birthday.month, A[i].birthday.day);	//é¡¯ç¤ºStudent[i]çš„å§“åï¼Œç”Ÿæ—¥å¹´æœˆæ—¥ 
+		for (j = 0; j < Subject; j++)					//å¦‚æœjå°æ–¼ç§‘ç›®æ•¸æ™‚åŸ·è¡Œ 
 		{
-			printf("%10d", A[i].score[j]);				//¿é¥XStudent[i].score[j]ªº¤À¼Æ 
+			printf("%10d", A[i].score[j]);				//è¼¸å‡ºStudent[i].score[j]çš„åˆ†æ•¸ 
 		}
-		printf("%10.2f %10.2f\n", A[i].ave, A[i].STD); //¿é¥XStudent[i]ªº¥­§¡»P¼Ğ·Ç®t 
+		printf("%10.2f %10.2f\n", A[i].ave, A[i].STD); 			//è¼¸å‡ºStudent[i]çš„å¹³å‡èˆ‡æ¨™æº–å·® 
 	}
 
 
