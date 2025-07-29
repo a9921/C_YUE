@@ -1,18 +1,18 @@
 /* ===================================================================== 
-¾Ç    ¸¹ ¡G1102160                                                  
-©m    ¦W ¡G³¯§Ê©¨ 
-§¹¦¨¤é´Á ¡G2025/04/24                                                
-ÀÉ    ¦W ¡GD2160PrgHw08_3.CPP                                       
-µ{¦¡¥\¯à ¡GBMIÅéºA­pºâ   
+å­¸    è™Ÿ ï¼š1102160                                                  
+å§“    å ï¼šé™³å»·å²³ 
+å®Œæˆæ—¥æœŸ ï¼š2025/04/24                                                
+æª”    å ï¼šD2160PrgHw08_3.CPP                                       
+ç¨‹å¼åŠŸèƒ½ ï¼šBMIé«”æ…‹è¨ˆç®—   
 ======================================================================== */ 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE 3									//¾Ç¥Í¤H¼Æ¦ì3 
+#define SIZE 3								//å­¸ç”Ÿäººæ•¸ä½3 
 
-struct student									//©w¸qµ²ºc¨ç¼Æstudentªº¤º®e¡A ©m¦W¡B¨­°ª¡BÅé­«¡BBMI¡BÅéºA 
+struct student								//å®šç¾©çµæ§‹å‡½æ•¸studentçš„å…§å®¹ï¼Œ å§“åã€èº«é«˜ã€é«”é‡ã€BMIã€é«”æ…‹ 
 {
 	char name[50];								 
 	double height;
@@ -21,44 +21,44 @@ struct student									//©w¸qµ²ºc¨ç¼Æstudentªº¤º®e¡A ©m¦W¡B¨­°ª¡BÅé­«¡BBMI¡BÅéºA
 	char type[10];
 };
 
-void calculateBMI(struct student*A)				//©w¸q¨ç¼Æ calculateBMI¿é¤J¤º®eµ²ºcstudent«ü¼ĞA
+void calculateBMI(struct student*A)					//å®šç¾©å‡½æ•¸ calculateBMIè¼¸å…¥å…§å®¹çµæ§‹studentæŒ‡æ¨™A
 {
-	for(int i=0; i<SIZE; i++)					//·íi¤p©óSIZE®É°õ¦æ 
+	for(int i=0; i<SIZE; i++)					//ç•¶iå°æ–¼SIZEæ™‚åŸ·è¡Œ 
 	{
-		double H=A[i].height/100.0;				//H=A[i]ªº¨­°ª°£©ó100 
-		A[i].BMI=A[i].weight/(H*H);				//A[i]ªºBMI=A[i]ªºÅé­«/H¥­¤è 
+		double H=A[i].height/100.0;				//H=A[i]çš„èº«é«˜é™¤æ–¼100 
+		A[i].BMI=A[i].weight/(H*H);				//A[i]çš„BMI=A[i]çš„é«”é‡/Hå¹³æ–¹ 
 		
-		if(A[i].BMI<20)							//¦pªGA[i]ªºBMI¤p©ó20®É°õ¦æ 
-			strcpy(A[i].type, "¤Ó½G");			//¿é¤JA[i].type¬°¤Ó½G 
-		else if(A[i].BMI<25)					//¦pªGA[i]ªºBMI¤p©ó25®É°õ¦æ 
-			strcpy(A[i].type, "¼Ğ·Ç");			//¿é¤JA[i].type¬°¼Ğ·Ç 
-		else if(A[i].BMI<=28)					//¦pªGA[i]ªºBMI¤p©óµ¥©ó28®É°õ¦æ 
-			strcpy(A[i].type, "¹L­«");			//¿é¤JA[i].type¬°¹L­« 
-		else									//¦pªGA[i]ªºBMI¤j©ó28®É°õ¦æ 
-			strcpy(A[i].type, "ªÎ­D"); 			//¿é¤JA[i].type¬°ªÎ­D 
+		if(A[i].BMI<20)						//å¦‚æœA[i]çš„BMIå°æ–¼20æ™‚åŸ·è¡Œ 
+			strcpy(A[i].type, "å¤ªç˜¦");			//è¼¸å…¥A[i].typeç‚ºå¤ªç˜¦ 
+		else if(A[i].BMI<25)					//å¦‚æœA[i]çš„BMIå°æ–¼25æ™‚åŸ·è¡Œ 
+			strcpy(A[i].type, "æ¨™æº–");			//è¼¸å…¥A[i].typeç‚ºæ¨™æº– 
+		else if(A[i].BMI<=28)					//å¦‚æœA[i]çš„BMIå°æ–¼ç­‰æ–¼28æ™‚åŸ·è¡Œ 
+			strcpy(A[i].type, "éé‡");			//è¼¸å…¥A[i].typeç‚ºéé‡ 
+		else							//å¦‚æœA[i]çš„BMIå¤§æ–¼28æ™‚åŸ·è¡Œ 
+			strcpy(A[i].type, "è‚¥èƒ–"); 			//è¼¸å…¥A[i].typeç‚ºè‚¥èƒ– 
 	}
 }
 
 int main()
 {
-	struct student A[SIZE];						//µ²ºcstudent¦W¬°A¤H¼Æ¬°SIZE 3 
+	struct student A[SIZE];						//çµæ§‹studentåç‚ºAäººæ•¸ç‚ºSIZE 3 
 	
-	for(int i=0; i<SIZE; i++)					//·íi¤p©óSIZE®É°õ¦æ 
+	for(int i=0; i<SIZE; i++)					//ç•¶iå°æ–¼SIZEæ™‚åŸ·è¡Œ 
 	{
-		printf("¿é¤J²Ä%d¦ì¾Ç¥Íªº©m¦W:",i+1);			//¿é¤J²Äi+1¦ìªº¾Ç¥Í©m¦W 
+		printf("è¼¸å…¥ç¬¬%dä½å­¸ç”Ÿçš„å§“å:",i+1);			//è¼¸å…¥ç¬¬i+1ä½çš„å­¸ç”Ÿå§“å 
 		fgets(A[i].name, sizeof(A[i].name), stdin); 	 
-		A[i].name[strcspn(A[i].name, "\n")] = '\0';		//²M°£A[i].nameªº\n§ï¬°\0 
-		printf("¨­°ª(cm):");							//¿é¤J¨­°ª 
+		A[i].name[strcspn(A[i].name, "\n")] = '\0';		//æ¸…é™¤A[i].nameçš„\næ”¹ç‚º\0 
+		printf("èº«é«˜(cm):");					//è¼¸å…¥èº«é«˜ 
 		scanf("%lf",&A[i].height);
-		printf("Åé­«(kg):");							//¿é¤JÅé­« 
+		printf("é«”é‡(kg):");					//è¼¸å…¥é«”é‡ 
 		scanf("%lf",&A[i].weight);
-		while(getchar()!='\n');							//²M°£½w¦s 
+		while(getchar()!='\n');					//æ¸…é™¤ç·©å­˜ 
 	}
 	
-	calculateBMI(A);									//©I¥s calculateBMI¨ç¼Æ 
-	printf("\t©m¦W\t   ¨­°ª(cm) \tÅé­«(kg) \t BMI \t\tÅé¦ì \n");	//¿é¥X©m¦W¨­°ªÅé­«BMI¸òÅé¦ì 
-	for(int i=0; i<SIZE; i++)										//·íi¤p©óSIZE®É°õ¦æ
-																	//¿é¥XA[i]ªº©m¦W¨­°ªÅé­«BMI»PÅé¦ì 
+	calculateBMI(A);						//å‘¼å« calculateBMIå‡½æ•¸ 
+	printf("\tå§“å\t   èº«é«˜(cm) \té«”é‡(kg) \t BMI \t\té«”ä½ \n");	//è¼¸å‡ºå§“åèº«é«˜é«”é‡BMIè·Ÿé«”ä½ 
+	for(int i=0; i<SIZE; i++)					//ç•¶iå°æ–¼SIZEæ™‚åŸ·è¡Œ
+									//è¼¸å‡ºA[i]çš„å§“åèº«é«˜é«”é‡BMIèˆ‡é«”ä½ 
 		printf("%-20s %.1f\t%.1f\t\t%.2f\t\t%s \n",A[i].name ,A[i].height ,A[i].weight ,A[i].BMI ,A[i].type);
 	
 	
