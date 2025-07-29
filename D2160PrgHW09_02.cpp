@@ -1,87 +1,87 @@
 /* ===================================================================== 
-¾Ç    ¸¹ ¡G1102160                                                  
-©m    ¦W ¡G³¯§Ê©¨ 
-§¹¦¨¤é´Á ¡G2025/05/05                                                
-ÀÉ    ¦W ¡GD2160PrgHw09_2.CPP                                       
-µ{¦¡¥\¯à ¡G«ü¼Ğ°}¦C¾Ç´Á¦¨ÁZ­pºâ       
+å­¸    è™Ÿ ï¼š1102160                                                  
+å§“    å ï¼šé™³å»·å²³ 
+å®Œæˆæ—¥æœŸ ï¼š2025/05/05                                                
+æª”    å ï¼šD2160PrgHw09_2.CPP                                       
+ç¨‹å¼åŠŸèƒ½ ï¼šæŒ‡æ¨™é™£åˆ—å­¸æœŸæˆç¸¾è¨ˆç®—       
 ======================================================================== */ 
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-struct student							//©w¸qstudentµ²ºc¥]§t©m¦W¡B¤À¼Æ«ü¼Ğ¡B¥­§¡ 
+struct student								//å®šç¾©studentçµæ§‹åŒ…å«å§“åã€åˆ†æ•¸æŒ‡æ¨™ã€å¹³å‡ 
 {
 	char Name[20];
 	float *score;
 	double ave;
 };
 
-double mean(float *pA, int num)			//¥­§¡¦¨ÁZ¨ç¼Æ 
+double mean(float *pA, int num)						//å¹³å‡æˆç¸¾å‡½æ•¸ 
 {
 	int i;
 	double ave=0.0, sum=0.0;
 	
 	for(i=0; i<num; i++)
-		sum+=pA[i];						//¥[Á`¦U¬ì¦¨ÁZ 
-	ave=sum/num;						//Á`©M°£©ó¬ì¥Ø¼Æ 
+		sum+=pA[i];						//åŠ ç¸½å„ç§‘æˆç¸¾ 
+	ave=sum/num;							//ç¸½å’Œé™¤æ–¼ç§‘ç›®æ•¸ 
 	return ave;
 } 
 
 int main()
 {
 	int sub_N, student_N, i, j;
-	char **subName;						//¬ì¥Ø¦WºÙªº°ÊºA°O¾ĞÅé 
+	char **subName;							//ç§‘ç›®åç¨±çš„å‹•æ…‹è¨˜æ†¶é«” 
 	struct student *pN;
 	
-	printf("½Ğ¿é¤J½Ò¥Ø¼Æ:");			//¿é¤J¬ì¥Ø¼Æ¸ò¤H¼Æ 
+	printf("è«‹è¼¸å…¥èª²ç›®æ•¸:");						//è¼¸å…¥ç§‘ç›®æ•¸è·Ÿäººæ•¸ 
 	scanf("%d",&sub_N);
-	printf("½Ğ¿é¤J¤H¼Æ:");
+	printf("è«‹è¼¸å…¥äººæ•¸:");
 	scanf("%d",&student_N);
-	getchar();							//²M°£½w¦s 
+	getchar();							//æ¸…é™¤ç·©å­˜ 
 	
-	subName =(char**)malloc(sizeof(char*)*sub_N); 			//¬ì¥Ø¼Æªº°ÊºA°O¾ĞÅé¤j¤p 
+	subName =(char**)malloc(sizeof(char*)*sub_N); 			//ç§‘ç›®æ•¸çš„å‹•æ…‹è¨˜æ†¶é«”å¤§å° 
 	for(i=0; i<sub_N; i++)
 	{
-		subName[i]=(char*)malloc(sizeof(char)*20);			//¬ì¥Ø¦WºÙªº°ÊºA°O¾ĞÅé¤j¤p 
-		printf("½Ğ¿é¤J²Ä%d¬ìªº¦WºÙ:",i+1);					//¿é¤J¬ì¥Ø¦WºÙ 
+		subName[i]=(char*)malloc(sizeof(char)*20);		//ç§‘ç›®åç¨±çš„å‹•æ…‹è¨˜æ†¶é«”å¤§å° 
+		printf("è«‹è¼¸å…¥ç¬¬%dç§‘çš„åç¨±:",i+1);			//è¼¸å…¥ç§‘ç›®åç¨± 
 		fgets(subName[i], 20, stdin);
 		subName[i][strcspn(subName[i], "\n")] = '\0';
 	}
 	
-	pN =(struct student*)malloc(sizeof(struct student)*student_N);	//¾Ç¥Í¤H¼Æ¦WºÙªº°ÊºA¤j¤p 
+	pN =(struct student*)malloc(sizeof(struct student)*student_N);	//å­¸ç”Ÿäººæ•¸åç¨±çš„å‹•æ…‹å¤§å° 
 	for(i=0; i<student_N; i++)
 	{
-		printf("½Ğ¿é¤J²Ä%d¦ì¾Ç¥Íªº©m¦W:",i+1);				//¿é¤J¾Ç¥Í¦WºÙ 
+		printf("è«‹è¼¸å…¥ç¬¬%dä½å­¸ç”Ÿçš„å§“å:",i+1);			//è¼¸å…¥å­¸ç”Ÿåç¨± 
 		fgets(pN[i].Name, 30, stdin);
 		pN[i].Name[strcspn(pN[i].Name, "\n")] = '\0';
 		
-		pN[i].score=(float*)malloc(sizeof(float)*sub_N);	//¾Ç¥Í¦¨ÁZªº°ÊºA°O¾ĞÅé¤j¤p 
+		pN[i].score=(float*)malloc(sizeof(float)*sub_N);	//å­¸ç”Ÿæˆç¸¾çš„å‹•æ…‹è¨˜æ†¶é«”å¤§å° 
 		for(j=0; j<sub_N; j++)
 		{
-			printf("½Ğ¿é¤J%s¦¨ÁZ:",subName[j]);				//¿é¤J¦¨ÁZ 
+			printf("è«‹è¼¸å…¥%sæˆç¸¾:",subName[j]);		//è¼¸å…¥æˆç¸¾ 
 			scanf("%f",&pN[i].score[j]);
 		} 
 		getchar();
-		pN[i].ave=mean(pN[i].score,sub_N);					//©I¥s¥­§¡¨ç¦¡ 
+		pN[i].ave=mean(pN[i].score,sub_N);			//å‘¼å«å¹³å‡å‡½å¼ 
 	}
 	
 	printf("-------------------------------------------------------------- \n");
-	printf("%-10s","©m¦W");									//¿é¥X©m¦W¼ĞÃD 
+	printf("%-10s","å§“å");						//è¼¸å‡ºå§“åæ¨™é¡Œ 
 	for(i=0; i<sub_N; i++)
-		printf("%-8s",subName[i]);							//¿é¥X¬ì¥Ø¦WºÙ¼ĞÃD 
-	printf("¥­§¡ \n");										//¿é¥X¥­§¡¼ĞÃD 
+		printf("%-8s",subName[i]);				//è¼¸å‡ºç§‘ç›®åç¨±æ¨™é¡Œ 
+	printf("å¹³å‡ \n");						//è¼¸å‡ºå¹³å‡æ¨™é¡Œ 
 	
 	for(i=0; i<student_N; i++)
 	{
-		printf("%-10s",pN[i].Name);							//¿é¥X¾Ç¥Í¦WºÙ 
+		printf("%-10s",pN[i].Name);				//è¼¸å‡ºå­¸ç”Ÿåç¨± 
 		for(j=0; j<sub_N; j++)
-			printf("%-8.1f",pN[i].score[j]);				//¿é¥X¾Ç¥Í¦¨ÁZ 
-		printf("%.2lf \n",pN[i].ave);						//¿é¥X¾Ç¥Í¥­§¡ 
+			printf("%-8.1f",pN[i].score[j]);		//è¼¸å‡ºå­¸ç”Ÿæˆç¸¾ 
+		printf("%.2lf \n",pN[i].ave);				//è¼¸å‡ºå­¸ç”Ÿå¹³å‡ 
 	}
 	
 
-	free(subName);											//ÄÀ©ñ°O¾ĞÅé 
+	free(subName);							//é‡‹æ”¾è¨˜æ†¶é«” 
 	free(pN);
 	
 	system("pause");
