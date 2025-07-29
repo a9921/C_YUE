@@ -1,9 +1,9 @@
 /* ===================================================================== 
-¾Ç    ¸¹ ¡G1102160                                                  
-©m    ¦W ¡G³¯§Ê©¨ 
-§¹¦¨¤é´Á ¡G2025/04/07                                                
-ÀÉ    ¦W ¡GD2160PrgHw07_1.CPP                                       
-µ{¦¡¥\¯à ¡G©m¦W¨­°ªÅé­«BMIÅéºAªºµ²ºc¨ç¼Æ        
+å­¸    è™Ÿ ï¼š1102160                                                  
+å§“    å ï¼šé™³å»·å²³ 
+å®Œæˆæ—¥æœŸ ï¼š2025/04/07                                                
+æª”    å ï¼šD2160PrgHw07_1.CPP                                       
+ç¨‹å¼åŠŸèƒ½ ï¼šå§“åèº«é«˜é«”é‡BMIé«”æ…‹çš„çµæ§‹å‡½æ•¸        
 ======================================================================== */ 
 
 #include <stdio.h>
@@ -11,9 +11,9 @@
 #include <string.h>
 #include <math.h>
 
-#define N 5						//¾Ç¥Í¼Æ¬°5 
+#define N 5							//å­¸ç”Ÿæ•¸ç‚º5 
 
-struct student					//µ²ºc¨ç¼Æstudent¡A¥]§t©m¦W¡B¨­°ª¡BÅé­«¡BBMI¡BÅéºA 
+struct student							//çµæ§‹å‡½æ•¸studentï¼ŒåŒ…å«å§“åã€èº«é«˜ã€é«”é‡ã€BMIã€é«”æ…‹ 
 {
 	char Name[15];
 	float height;
@@ -24,35 +24,35 @@ struct student					//µ²ºc¨ç¼Æstudent¡A¥]§t©m¦W¡B¨­°ª¡BÅé­«¡BBMI¡BÅéºA
 
 int main()
 {
-	struct student A[N];			//©I¥sµ²ºc¨ç¼Æstudent¥NºÙ¬°A 
-	int i;							//¾ã¼ÆÅÜ¼Æi 
+	struct student A[N];					//å‘¼å«çµæ§‹å‡½æ•¸studentä»£ç¨±ç‚ºA 
+	int i;							//æ•´æ•¸è®Šæ•¸i 
 	
-	for(i=0; i<N; i++)				//¦pªGi¤p©ó¾Ç¥Í¼Æ«K°õ¦æ 
+	for(i=0; i<N; i++)					//å¦‚æœiå°æ–¼å­¸ç”Ÿæ•¸ä¾¿åŸ·è¡Œ 
 	{
-		printf("½Ğ¿é¤J²Ä%d¦ìªº©m¦W:",i+1);				//¿é¤J²Äi+1¦ì¾Ç¥Íªº©m¦W 
+		printf("è«‹è¼¸å…¥ç¬¬%dä½çš„å§“å:",i+1);		//è¼¸å…¥ç¬¬i+1ä½å­¸ç”Ÿçš„å§“å 
 		fgets(A[i].Name, sizeof(A[i].Name), stdin);
-		A[i].Name[strcspn(A[i].Name,"\n")]='\0';		//²M°£fgetªº´«¦æ²Å 
-		printf("½Ğ¿é¤JÅé­«(kg)");						//¿é¤JÅé­« 
+		A[i].Name[strcspn(A[i].Name,"\n")]='\0';	//æ¸…é™¤fgetçš„æ›è¡Œç¬¦ 
+		printf("è«‹è¼¸å…¥é«”é‡(kg)");			//è¼¸å…¥é«”é‡ 
 		scanf("%f",&A[i].weight);
-		printf("½Ğ¿é¤J¨­°ª(cm)");						//¿é¤J¨­°ª 
+		printf("è«‹è¼¸å…¥èº«é«˜(cm)");			//è¼¸å…¥èº«é«˜ 
 		scanf("%f",&A[i].height);
-		getchar();										//²M°£½w¦s°Ï 
+		getchar();					//æ¸…é™¤ç·©å­˜å€ 
 		
-		A[i].BMI=A[i].weight/pow((A[i].height/100.0),2);		//studentªºBMI¬°Åé­«°£©ó¨­°ª°£©ó100ªº¥­¤è 
+		A[i].BMI=A[i].weight/pow((A[i].height/100.0),2);//studentçš„BMIç‚ºé«”é‡é™¤æ–¼èº«é«˜é™¤æ–¼100çš„å¹³æ–¹ 
 		
-		if(A[i].BMI<20)					//¦pªGBMI¤p©ó20ÅéºA¬°¤Ó½G 
-			A[i].body_sharp="¤Ó½G";
-		else if(A[i].BMI<=25)			//¤p©ó25¬°¼Ğ·Ç 
-			A[i].body_sharp="¼Ğ·Ç";
-		else if(A[i].BMI<=28)			//¤p©ó28¬°¹L­« 
-			A[i].body_sharp="¹L­«";
-		else 							//¨ä¾l¬°ªÎ­D 
-			A[i].body_sharp="ªÎ­D";	
+		if(A[i].BMI<20)					//å¦‚æœBMIå°æ–¼20é«”æ…‹ç‚ºå¤ªç˜¦ 
+			A[i].body_sharp="å¤ªç˜¦";
+		else if(A[i].BMI<=25)				//å°æ–¼25ç‚ºæ¨™æº– 
+			A[i].body_sharp="æ¨™æº–";
+		else if(A[i].BMI<=28)				//å°æ–¼28ç‚ºéé‡ 
+			A[i].body_sharp="éé‡";
+		else 						//å…¶é¤˜ç‚ºè‚¥èƒ– 
+			A[i].body_sharp="è‚¥èƒ–";	
 	}
 	
-	printf("\n%15s %15s %15s %15s %15s \n","©m¦W", "¨­°ª", "Åé­«", "BMI", "ÅéºA");	//¿é¥X¼ĞÃD 
-	for(i=0; i<N; i++)																//¦pªGi¤p©ó¾Ç¥Í¼Æ®É°õ¦æ 
-		printf("%15s %15.2f %15.2f %15.2f %15s \n", A[i].Name, A[i].height, A[i].weight, A[i].BMI, A[i].body_sharp);		//¿é¥X¾Ç¥Í[i]ªº©m¦W¨­°ªÅé­«BMI»PÅéºA 
+	printf("\n%15s %15s %15s %15s %15s \n","å§“å", "èº«é«˜", "é«”é‡", "BMI", "é«”æ…‹");	//è¼¸å‡ºæ¨™é¡Œ 
+	for(i=0; i<N; i++)														//å¦‚æœiå°æ–¼å­¸ç”Ÿæ•¸æ™‚åŸ·è¡Œ 
+		printf("%15s %15.2f %15.2f %15.2f %15s \n", A[i].Name, A[i].height, A[i].weight, A[i].BMI, A[i].body_sharp);		//è¼¸å‡ºå­¸ç”Ÿ[i]çš„å§“åèº«é«˜é«”é‡BMIèˆ‡é«”æ…‹ 
 	
 	system("pause");
 	return 0;
